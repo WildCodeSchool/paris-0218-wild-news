@@ -13,34 +13,34 @@ Une fois inscrit, l'utilisateur pourra visualiser en page d'accueil les derniers
 ---
 
 ## Dates
-⋅⋅* 20/03/18 -> 02/05/18 (live demo)
-⋅⋅* Présentation client tous les vendredis
+* 20/03/18 -> 02/05/18 (live demo)
+* Présentation client tous les vendredis
 
 ---
 
 ## Méthode et Technologie
-⋅⋅* groupe 5/6 personnes (random)
-⋅⋅* scrum/agile (1 week sprints)
-⋅⋅* git workflow / github
-⋅⋅* backend API (nodeJS)
-⋅⋅* database (mySQL)
-⋅⋅* routing (express)
-⋅⋅* frontend (github pages)
-⋅⋅* responsive
-⋅⋅* user authentication & roles
-⋅⋅* admin interface (CRUD)
+* groupe 5/6 personnes (random)
+* scrum/agile (1 week sprints)
+* git workflow / github
+* backend API (nodeJS)
+* database (mySQL)
+* routing (express)
+* frontend (github pages)
+* responsive
+* user authentication & roles
+* admin interface (CRUD)
 
 ---
 
 ## Membres de l'équipe Wild-News
-⋅⋅* Amel Braiek 
-⋅⋅* Daniel Deutsch
-⋅⋅* Frédéric Paquet
-⋅⋅* Guillaume Nobis
-⋅⋅* Lorraine Chastang
-⋅⋅* Souhail Souid
+* Amel Braiek 
+* Daniel Deutsch
+* Frédéric Paquet
+* Guillaume Nobis
+* Lorraine Chastang
+* Souhail Souid
 
-⋅⋅* Formateur : Clément Denis
+* Formateur : Clément Denis
 
 ---
 
