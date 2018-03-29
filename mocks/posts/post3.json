@@ -1,0 +1,20 @@
+{
+
+
+"id" : 3,
+
+"title" : "7 Surprising Things I Learned Writing a Fibonacci Generator in JavaScript",
+
+"createdAt" : 1522317346573,
+
+"text" : "Article sur un générateur de Fibonacci avec JS",
+
+"image" : "image",
+
+"source": "https://medium.com/javascript-scene/7-surprising-things-i-learned-writing-a-fibonacci-generator-4886a5c87710",
+
+"category" : "JavaScript",
+
+"author": "user"
+
+}
