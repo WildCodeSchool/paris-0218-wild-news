@@ -2,7 +2,9 @@
 
 ### Partagez vos dernières news !
 
+
 ## Description de projet
+
 Wild-news est un site qui permet aux élèves de la Wild Code School de partager des liens sur les sujets de leur choix, que ce soit sur un language, une technologie, un évènement, un très bon restaurant, ...
 
 Sur la page d'accueil, le visiteur pourra visualiser les derniers liens partagés classés par catégorie.
@@ -48,11 +50,3 @@ Une fois inscrit, l'utilisateur pourra visualiser en page d'accueil les derniers
 
 [![Travis master](https://img.shields.io/travis/WildCodeSchool/paris-0218-wild-news.svg)](https://travis-ci.org/WildCodeSchool/paris-0218-wild-news)
 [![Travis dev](https://img.shields.io/travis/WildCodeSchool/paris-0218-wild-news/dev.svg)](https://travis-ci.org/WildCodeSchool/paris-0218-wild-news/branches)
-
-
-
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
-[![Travis master](https://img.shields.io/travis/WildCodeSchool/paris-0218-wild-news.svg)](https://travis-ci.org/WildCodeSchool/paris-0218-wild-news)
-[![Travis dev](https://img.shields.io/travis/WildCodeSchool/paris-0218-wild-news/dev.svg)](https://travis-ci.org/WildCodeSchool/paris-0218-wild-news/branches)
-
