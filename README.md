@@ -2,7 +2,9 @@
 
 ### Partagez vos dernières news !
 
-##Description de projet
+
+## Description de projet
+
 Wild-news est un site qui permet aux élèves de la Wild Code School de partager des liens sur les sujets de leur choix, que ce soit sur un language, une technologie, un évènement, un très bon restaurant, ...
 
 Sur la page d'accueil, le visiteur pourra visualiser les derniers liens partagés classés par catégorie.
@@ -12,35 +14,35 @@ Une fois inscrit, l'utilisateur pourra visualiser en page d'accueil les derniers
 
 ---
 
-##Dates
-20/03/18 -> 02/05/18 (live demo)
-Présentation client tous les vendredis
+## Dates
+* 20/03/18 -> 02/05/18 (live demo)
+* Présentation client tous les vendredis
 
 ---
 
-##Méthode et Technologie
-groupe 5/6 personnes (random)
-scrum/agile (1 week sprints)
-git workflow / github
-backend API (nodeJS)
-database (mySQL)
-routing (express)
-frontend (github pages)
-responsive
-user authentication & roles
-admin interface (CRUD)
+## Méthode et Technologie
+* groupe 5/6 personnes (random)
+* scrum/agile (1 week sprints)
+* git workflow / github
+* backend API (nodeJS)
+* database (mySQL)
+* routing (express)
+* frontend (github pages)
+* responsive
+* user authentication & roles
+* admin interface (CRUD)
 
 ---
 
-##Membres de l'équipe Wild-News
-Amel Braiek 
-Daniel Deutsch
-Frédéric Paquet
-Guillaume Nobis
-Lorraine Chastang
-Souhail Souid
+## Membres de l'équipe Wild-News
+* Amel Braiek 
+* Daniel Deutsch
+* Frédéric Paquet
+* Guillaume Nobis
+* Lorraine Chastang
+* Souhail Souid
 
-Formateur : Clément Denis
+* Formateur : Clément Denis
 
 ---
 
@@ -48,4 +50,3 @@ Formateur : Clément Denis
 
 [![Travis master](https://img.shields.io/travis/WildCodeSchool/paris-0218-wild-news.svg)](https://travis-ci.org/WildCodeSchool/paris-0218-wild-news)
 [![Travis dev](https://img.shields.io/travis/WildCodeSchool/paris-0218-wild-news/dev.svg)](https://travis-ci.org/WildCodeSchool/paris-0218-wild-news/branches)
-
