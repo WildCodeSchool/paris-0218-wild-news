@@ -15,8 +15,8 @@
 		<!-- headbar -->
 		<div class="headbar">
 			<ul>
-				<li>
-					<img src="assets/logo_orange.png" id="logo">
+				<li id="logo">
+					<img src="assets/logo_orange.png">
 				</li>
 				<li>
 					<h1>Wild News</h1>
@@ -70,10 +70,10 @@
 					<img src="http://via.placeholder.com/550x300" alt="Category 1" class="cat-img">
 					<div class="article container">
 						<div class="article-caption row">
-							<img src="http://via.placeholder.com/300x300" class="column column-25 article-img" alt="article">
+							<div id="image"></div>
 							<div class="column column-75">
-								<h4>Article title</h4>
-								<p>Maximis in consilium tributus decrevi decrevi dierum hac ego erat dierum maxime meum rei quae.</p>
+								<h4 id="posts"></h4>
+								<p id="description"></p>
 							</div>
 						</div>
 						<div class="row article-caption">
@@ -134,6 +134,9 @@
 	<footer>
 		<p>&copy;2018 Wild News</p>
 	</footer>
+	<script type="module" src="/js/app.js"></script>
 </body>
 
 </html>
+
+

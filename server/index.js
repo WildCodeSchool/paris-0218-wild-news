@@ -1,8 +1,7 @@
 const express = require("express")
 const post1 = require("../mocks/posts/post1.json")
-const post2 = require("../mocks/posts/post2.json")
 
-const posts = [post1, post2]
+const posts = post1
 const app = express()
 
 app.use((request, response, next) => {
