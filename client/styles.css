@@ -6,6 +6,7 @@ header {
 #logo {
   max-width: 100px;
   max-height: 100px;
+  float: left;
 }
 .user {
   float: right;
@@ -42,15 +43,10 @@ header {
 }
 
 .headbar li {
-  /* float: left; */
   margin: 0 2rem 0 0;
   padding: 1rem;
   text-align: center;
   display: inline-flex;
-}
-
-.headbar .logo {
-  float: left;
 }
 
 .headbar li a {
