@@ -1,9 +1,9 @@
 {
 "id" : 1,
-"title" : "React News on Native",
+"title" : " React News on Native",
 "createdAt" : 1522227600448,
-"text" : "Article sur la tech",
-"image" : "image",
+"text" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis fugiat non reiciendis fuga quas minima.",
+"image" : "https://jaxenter.com/wp-content/uploads/2018/03/shutterstock_64341418.jpg",
 "source": "https://jaxenter.com/react-native-cross-platform-app-development-142732.html",
 "category" : "Tips",
 "author": "user.id1"
