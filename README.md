@@ -42,6 +42,7 @@ Une fois inscrit, l'utilisateur pourra visualiser en page d'accueil les derniers
 * Lorraine Chastang
 * Souhail Souid
 
+
 * Formateur : Clément Denis
 
 ---
