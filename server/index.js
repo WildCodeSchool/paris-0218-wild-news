@@ -13,7 +13,8 @@ fs.readdir(categoriesFolder, (err, categories) => {
     fs.readdir(categoriesFolder + category, (err, files) => {
       posts[category] = []
       files.forEach(file => {
-        posts[category].push(require(categoriesFolder + category + '/' + file))
+        posts[category].push(require(categoriesFolder +
+          category + '/' + file))
       })
     })
   })
