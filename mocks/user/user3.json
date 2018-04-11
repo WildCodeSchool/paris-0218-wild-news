@@ -1,0 +1,15 @@
+{
+	"id" : 3,
+	"username" : "souhail",
+	"email" : "am@live.fr",
+	"password" : 123,
+	"createdAt" : 1523437162442,
+	"firstName" : "souhail",
+	"lastName" : "souid",
+	"image" : "",
+	"favPosts" : "",
+	"favCategory" : ["Javascript", "Tips", "Meetup"],
+	"admin" : false
+}
+
+
