@@ -122,20 +122,15 @@ header {
 .cat-img {
   padding: 0 2rem;
 }
-.cat-left {
+
+.category {
   background-color: #fff;
   border: solid #e78914;
   border-radius: 1rem;
   margin: 2rem 0;
   padding: 2rem;
 }
-.cat-right {
-  background-color: #fff;
-  border: solid #e78914;
-  border-radius: 1rem;
-  margin: 2rem 0;
-  padding: 2rem;
-}
+
 .article-caption {
   margin: 1rem 0 1.8rem;
   border-bottom: solid 0.1rem #e78914;
