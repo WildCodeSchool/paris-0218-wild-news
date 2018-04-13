@@ -1,0 +1,14 @@
+{
+  "id" : 1,
+  "connection" : true,
+  "username" : "lala",
+  "email" : "user1@gmail.com",
+  "password" : "password",
+  "createdAt" : "1522317537393",
+  "firstName" : "mimi",
+  "lastName" : "cracra",
+  "image" : "https://jaxenter.com/wp-content/uploads/2018/03/shutterstock_64341418.jpg",
+  "favPosts" : "none",
+  "favCategory" : "non",
+  "admin" : false
+}

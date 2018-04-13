@@ -1,11 +1,22 @@
 #!/usr/bin/env node
 
-const fs = require('fs') // fs = File system vous pouvez voir la doc sur MDN ou ce lien sur stackoverflow qui explique ce qui est fait juste en dessous https://stackoverflow.com/questions/2727167/how-do-you-get-a-list-of-the-names-of-all-files-present-in-a-directory-in-node-j
+const fs = require('fs')
 const express = require('express')
 const app = express()
 
-let posts = {} //permet de recuperer l'objet contenant les catégories avec leur posts (fait plus bas a l'aide du forEach et du push)
 
+
+let allUsers = []
+const usersFolder = '../mocks/users/'
+
+fs.readdir(usersFolder, (err, users) => {
+  users.forEach(user => {
+    allUsers.push(require(usersFolder + user))
+  })
+})
+
+let posts = {}
+let allPosts = {}
 const categoriesFolder = '../mocks/posts/'
 
 fs.readdir(categoriesFolder, (err, categories) => {
@@ -13,11 +24,13 @@ fs.readdir(categoriesFolder, (err, categories) => {
     fs.readdir(categoriesFolder + category, (err, files) => {
       posts[category] = []
       files.forEach(file => {
-        posts[category].push(require(categoriesFolder + category + '/' + file))
+        const post = require(categoriesFolder + category + '/' + file);
+        posts[category].push(post)
+        allPosts[post.id] = post;
       })
     })
   })
-}) // voir l'article stackoverflow plus haut
+})
 
 app.use((request, response, next) => {
   response.header('Access-Control-Allow-Origin', '*')
@@ -32,8 +45,25 @@ app.get('/', (request, response) => {
   response.send('OK')
 })
 
+app.get('/article/:id', (request, response) => {
+  console.log(allPosts)
+  response.json(allPosts[request.params.id])
+})
+
 app.get('/posts', (request, response) => {
   response.json(posts)
+})
+
+app.get('/users', (request, response) => {
+  response.json(allUsers)
+})
+
+app.get('/static/:page', (request, response) => {
+  let page = fs.readFileSync('../client/static/' + request.params.page).toString()
+  page = page.replace('[[useername]]', allUsers[0].username)
+  response.writeHeader(200, {"Content-Type": "text/html"});
+  response.write(page);
+  response.end();
 })
 
 app.listen(3000, () => console.log('j\'écoute sur le port 3000'))
