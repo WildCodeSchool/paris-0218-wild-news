@@ -1,10 +1,10 @@
 {
-  "id" : 7,
-  "title" : "How to Create Subtle Animated Text Openings",
-  "createdAt" : 1522338838840,
-  "text" : "Article explaining animated text",
-  "image" : "image",
-  "source" : "https://medium.freecodecamp.org/how-to-create-subtle-animated-text-openings-eb901d3a886e",
-  "category" : "Tips",
-  "author" : 7
+	"id" : 7,
+	"title" : "How to Create Subtle Animated Text Openings",
+	"createdAt" : "1522338838840",
+	"text" : "Article explaining animated text",
+	"image" : "https://cdn-images-1.medium.com/max/1600/1*ItvkxPE6R1hGEIC_Ko3TfA.gif",
+	"source" : "https://medium.freecodecamp.org/how-to-create-subtle-animated-text-openings-eb901d3a886e",
+	"category" : "Tips",
+	"author" : "user."
 }

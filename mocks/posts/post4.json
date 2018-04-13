@@ -1,10 +1,10 @@
 {
-  "id" : 4,
-  "title" : "Lesser known CSS quirks & advanced tips",
-  "createdAt" : 1522317537393,
-  "text" : "Article sur de supers astuces CSS",
-  "image" : "image",
-  "source": "https://medium.com/@peedutuisk/lesser-known-css-quirks-oddities-and-advanced-tips-css-is-awesome-8ee3d16295bb",
-  "category" : "Tips",
-  "author": 4
+"id" : 4,
+"title" : "Lesser known CSS quirks & advanced tips",
+"createdAt" : 1522317537393,
+"text" : "Article sur de supers astuces CSS",
+"image" : "https://cdn-images-1.medium.com/max/1600/1*YuzakcmBI7vlrwuWdkIeUA.jpeg",
+"source": "https://medium.com/@peedutuisk/lesser-known-css-quirks-oddities-and-advanced-tips-css-is-awesome-8ee3d16295bb",
+"category" : "Tips",
+"author": "4"
 }
