@@ -14,3 +14,25 @@ fetch('http://localhost:3000/post')
     postsElementTips.innerHTML = postElementTips
     postsElementJavascript.innerHTML = postElementJavascript
   })
+
+document.getElementById('add-link').addEventListener('submit', event => {
+  event.preventDefault()
+  const title = document.getElementById('titre-article').value
+  const description = document.getElementById('description-article').value
+  const image = document.getElementById('img-article').value
+  const lien = document.getElementById('lien-article').value
+  const categorie = document.getElementById('categorie-article').value
+  const auteur = document.getElementById('auteur-article').value
+
+  fetch('http://localhost:3000/post', {
+    method: 'post',
+    body: JSON.stringify({
+      title,
+      description,
+      image,
+      lien,
+      categorie,
+      auteur
+    })
+  }).then(res => console.log(res.status))
+})

@@ -4,6 +4,7 @@ const path = require('path')
 const util = require('util')
 const readFile = util.promisify(fs.readFile)
 const readdir = util.promisify(fs.readdir)
+const writeFile = util.promisify(fs.writeFile)
 
 const app = express()
 
@@ -15,6 +16,25 @@ app.use((request, response, next) => {
   )
   next()
 })
+
+app.use((request, response, next) => {
+  if (request.method === 'GET') return next()
+  let accumulator = ''
+
+  request.on('data', data => {
+    accumulator += data
+  })
+  request.on('end', () => {
+    try{
+      request.body = JSON.parse(accumulator)
+      next()
+    } catch (err) {
+      next(err)
+    }
+    next()
+  })
+})
+
 
 app.get('/', (request, response) => {
   response.send('OK')
@@ -38,6 +58,28 @@ app.get('/post', (request, response) => {
     .then(allFilesValues => response.json(allFilesValues.map(JSON.parse)))
     .catch(err => response.status(500).end(err.message))
 
+})
+
+// ****************ROUTE POUR POST SUR ACCUEIL******************//
+
+app.post('/post', (request, response, next) => {
+  const id = Math.random().toString(36).slice(2).padEnd(11, '0')
+  const filename = `${id}.json`
+  const filepath = path.join(__dirname, '../mocks/posts', filename)
+  console.log(id)
+  const content = {
+    id: id,
+    title: request.body.title,
+    createdAt: Date.now(),
+    text: request.body.description,
+    image : request.body.image,
+    source: request.body.lien,
+    category : request.body.categorie,
+    author: request.body.auteur
+  }
+  writeFile(filepath, JSON.stringify(content), 'utf8')
+    .then(() => response.json('OK'))
+    .catch(next)
 })
 
 
