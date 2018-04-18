@@ -9,6 +9,7 @@ const writeFile = util.promisify(fs.writeFile)
 const app = express()
 
 app.use((request, response, next) => {
+  console.log('je set les headers cors')
   response.header('Access-Control-Allow-Origin', '*')
   response.header(
     'Access-Control-Allow-Headers',
@@ -18,6 +19,7 @@ app.use((request, response, next) => {
 })
 
 app.use((request, response, next) => {
+  console.log('je parse le body')
   if (request.method === 'GET') return next()
   let accumulator = ''
 
@@ -27,11 +29,11 @@ app.use((request, response, next) => {
   request.on('end', () => {
     try{
       request.body = JSON.parse(accumulator)
+      console.log('je parse le body')
       next()
     } catch (err) {
       next(err)
     }
-    next()
   })
 })
 
