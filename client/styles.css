@@ -85,6 +85,7 @@ header {
 }*/
 .add {
   float: right;
+  color: #fff;
 }
 
 .navbar li a {
@@ -96,6 +97,7 @@ header {
   color: #fff;
   font-weight: 700;
   background-color: #e78914;
+  cursor: pointer;
 }
 
 /* -- SLIDER -- */
@@ -199,6 +201,7 @@ header {
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 2.5;
+  text-align: left;
 }
 
 #add-link input,#add-category input  {
