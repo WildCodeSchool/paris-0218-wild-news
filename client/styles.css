@@ -238,6 +238,9 @@ header {
    font-family: Arial, Helvetica, sans-serif;
 }
 
+.label-category {
+display: none;}
+
 /* Add Animation */
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
