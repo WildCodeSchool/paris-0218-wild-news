@@ -165,7 +165,6 @@ header {
 }
 .cat-button button:hover {
   background-color: #e78914;
-  border: solid none;
   border-radius: 0.8rem;
   line-height: 0rem;
   font-size: 1.2rem;
@@ -174,14 +173,25 @@ header {
 
 /* -- MODAL -- */
 /* Modal Button */
-#myBtn{
+.send-button {
+  text-align: center;
+}
+#myBtn {
+  margin-left: 2rem;
+  padding: 0 3.15rem;
   background-color: #faa944;
   border : none;
   border-radius: 0.8rem;
   line-height: 0rem;
   font-size: 1.2rem;
-  font-weight: bold;
-  margin-left: 20px;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+
+}
+#myBtn:hover {
+  background-color: #e78914;
+  font-weight: 700;
+  padding: 0 3rem;
 }
 
 #add-link label, #add-category label{
@@ -236,6 +246,7 @@ header {
     margin: auto;
     padding: 0;
     width: 80%;
+    border-radius: 1.2rem;
     box-shadow: 0 0.4rem 0.8rem 0 rgba(0,0,0,0.2),0 0.6rem 2rem 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -259,15 +270,15 @@ display: none;}
 
 /* The Close Button */
 .close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+  padding-right: 1rem;
+  color: #fff;
+  float: right;
+  font-size: 2.8rem;
+  font-weight: 700;
 }
 
 .close:hover,
 .close:focus {
-    color: #000;
     text-decoration: none;
     cursor: pointer;
 }
@@ -275,6 +286,7 @@ display: none;}
 .modal-header {
     padding: 1rem 1rem 0.4rem;
     background-color: #faa944;
+    border-radius: 1.2rem 1.2rem 0 0;
     color: white;
     text-align: center;
 }
