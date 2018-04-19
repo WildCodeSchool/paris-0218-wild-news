@@ -1,4 +1,5 @@
 import { createNewPost } from '/components/block-article-accueil.js'
+import { createNavBar } from '/components/nav-bar.js'
 
 fetch('http://localhost:3000/post')
   .then(response => response.json())
@@ -14,6 +15,8 @@ fetch('http://localhost:3000/post')
     postsElementTips.innerHTML = postElementTips
     postsElementJavascript.innerHTML = postElementJavascript
   })
+
+//******************AJOUT CATEGORIE**************//
 
 document.getElementById('add-category').addEventListener('submit', event => {
   event.preventDefault()
@@ -33,9 +36,9 @@ document.getElementById('add-category').addEventListener('submit', event => {
 })
 
 
-//******************OUVERTURE DU FORMULAIRE**************//
+//******************OUVERTURE DU FORMULAIRE CREATION CATEGORIE**************//
 // Get the modal
-const modal = document.getElementById('myModal');
+const modal = document.getElementById('myModalCat');
 
 // Get the button that opens the modal
 const btn = document.getElementById("btn-category");
@@ -59,3 +62,16 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+
+//******************AJOUT NAVBAR DYNAMIC**************//
+fetch('http://localhost:3000/navbar')
+  .then(response => response.json())
+  .then(categories => {
+
+    const categoriesList = document.getElementById('navbar')
+
+    const categoryList = categories.map(createNavBar).join('')
+
+    categoriesList.innerHTML = categoryList
+  })

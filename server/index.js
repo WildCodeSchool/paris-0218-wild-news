@@ -46,7 +46,6 @@ app.get('/', (request, response) => {
 
 
 
-
 // ****************ROUTE POUR ACCUEIL RETOURNE TOUS LES POSTS******************//
 
 app.get('/post', (request, response) => {
@@ -63,12 +62,6 @@ app.get('/post', (request, response) => {
     .catch(err => response.status(500).end(err.message))
 
 })
-
-
-
-
-
-
 
 
 
@@ -120,24 +113,6 @@ app.post('/category', (request, response, next) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ****************ROUTE POUR LES CATEGORY AVEC PARAMETRE******************//
 
 app.get('/category/:name', (request, response) => {
@@ -145,7 +120,7 @@ app.get('/category/:name', (request, response) => {
   const postsDir = path.join(__dirname,'../', 'mocks/posts') // construit URL : path ajoute des / et join réunit tout
 
   readdir(postsDir) // récupère tous les noms de fichiers mais seulement les noms pas chemin complet , en l'occurence post1.json
-    .then(files => Promise.all(files
+    .then(files => Promise.all(files //prendre un tableau de promesses et le convertir en tableau de valeur des promesses
       .map(file => path.join(postsDir, file))
       .map(filepath => readFile(filepath, 'utf8'))))
 
@@ -173,6 +148,43 @@ app.get('/post/:id', (request, response) => {
     })
 
 })
+
+// ****************ROUTE POUR LA NAVBAR****************** //
+
+app.get('/navbar', (request, response) => {
+
+  const navBarDir = path.join(__dirname,'../', 'mocks/category') // construit URL : path ajoute des / et join réunit tout
+
+  readdir(navBarDir) // récupère tous les noms de fichiers mais seulement les noms pas chemin complet , en l'occurence post1.json
+    .then(files => {
+      const filepaths = files.map(file => path.join(navBarDir, file))
+      const allFiles = filepaths.map(filepath => {
+        return readFile(filepath, 'utf8')
+      })
+
+        Promise.all(allFiles)
+        .then(allFilesValues => {
+          console.log(allFilesValues)
+          const valuesInJason = allFilesValues.map(JSON.parse)
+          console.log(valuesInJason)
+          console.log(valuesInJason[0].title)
+          const arrTitle = []
+
+          for (let i=0; i<valuesInJason.length; i++) {
+            if (valuesInJason[i].title !== null) {
+              arrTitle.push(valuesInJason[i].title)
+            }
+          }
+          console.log(arrTitle)
+
+          response.json(arrTitle)
+        })
+        .catch(err => {
+          response.status(500).end(err.message)
+        })
+    })
+})
+
 
 
 

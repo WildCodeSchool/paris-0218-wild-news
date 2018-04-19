@@ -98,6 +98,14 @@ header {
   background-color: #e78914;
 }
 
+a.title-nav-bar {
+  text-transform:capitalize;
+}
+
+#navbar{
+  display: inline;
+}
+
 /* -- SLIDER -- */
 
 .slider {
@@ -253,15 +261,15 @@ display: none;}
 }
 
 /* The Close Button */
-.close {
+.close, .closeCat {
     color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .closeCat:hover
+.close:focus, .closeCat:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
