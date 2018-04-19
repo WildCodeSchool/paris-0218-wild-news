@@ -183,21 +183,21 @@ header {
   margin-left: 20px;
 }
 
-#add-link label{
+#add-link label, #add-category label{
  color: white;
 }
 
-#add-link input  {
+#add-link input,#add-category input  {
     background-color: white;
     box-shadow: 0 4px 8px 0;
 }
 
-#add-link textarea  {
+#add-link textarea, #add-category textarea  {
     background-color: white;
     box-shadow: 0 4px 8px 0;
 }
 
-#add-link button {
+#add-link button, #add-category button {
   background-color: red;
   color: white;
   font-weight: bold;
