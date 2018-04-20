@@ -85,6 +85,7 @@ header {
 }*/
 .add {
   float: right;
+  color: #fff;
 }
 
 .navbar li a {
@@ -96,6 +97,7 @@ header {
   color: #fff;
   font-weight: 700;
   background-color: #e78914;
+  cursor: pointer;
 }
 
 a.title-nav-bar {
@@ -173,40 +175,54 @@ a.title-nav-bar {
 }
 .cat-button button:hover {
   background-color: #e78914;
-  border: solid none;
   border-radius: 0.8rem;
   line-height: 0rem;
   font-size: 1.2rem;
   font-weight: 700;
 }
 
-/*Modal Button*/
-#myBtn{
+/* -- MODAL -- */
+/* Modal Button */
+.send-button {
+  text-align: center;
+}
+#myBtn {
+  margin-left: 2rem;
+  padding: 0 3.15rem;
   background-color: #faa944;
   border : none;
   border-radius: 0.8rem;
   line-height: 0rem;
   font-size: 1.2rem;
-  font-weight: bold;
-  margin-left: 20px;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+
+}
+#myBtn:hover {
+  background-color: #e78914;
+  font-weight: 700;
+  padding: 0 3rem;
 }
 
 #add-link label, #add-category label{
- color: white;
+  color: #333;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.5;
+  text-align: left;
 }
 
 #add-link input,#add-category input  {
-    background-color: white;
-    box-shadow: 0 4px 8px 0;
+  background-color: white;
 }
 
 #add-link textarea, #add-category textarea  {
     background-color: white;
-    box-shadow: 0 4px 8px 0;
+    min-height: 10rem;
 }
 
 #add-link button, #add-category button {
-  background-color: red;
+  background-color: #faa944;
   color: white;
   font-weight: bold;
   border: none;
@@ -215,12 +231,16 @@ a.title-nav-bar {
   font-size: 1.2rem;
 }
 
+#add-link button:hover, #add-category button:hover {
+  background-color: #e78914;
+}
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 50px; /* Location of the box */
+    padding: 3rem 0; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -233,17 +253,16 @@ a.title-nav-bar {
 /* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #C0C0C0;
+    background-color: #eee;
     margin: auto;
     padding: 0;
-    border: 1px solid #888;
     width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 1.2rem;
+    box-shadow: 0 0.4rem 0.8rem 0 rgba(0,0,0,0.2),0 0.6rem 2rem 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s;
-   font-family: Arial, Helvetica, sans-serif;
 }
 
 .label-category {
@@ -261,6 +280,7 @@ display: none;}
 }
 
 /* The Close Button */
+
 .close, .closeCat {
     color: white;
     float: right;
@@ -271,27 +291,30 @@ display: none;}
 .close:hover, .closeCat:hover
 .close:focus, .closeCat:focus {
     color: #000;
+
     text-decoration: none;
     cursor: pointer;
 }
 
 .modal-header {
-    padding: 10px 10px;
+    padding: 1rem 1rem 0.4rem;
     background-color: #faa944;
+    border-radius: 1.2rem 1.2rem 0 0;
     color: white;
     text-align: center;
-    font-size: 28px;
-    box-shadow: 0 4px 8px 0;
 }
 
 .modal-header h2 {
-    margin-top:15px;
-    font-weight: bold;
+    margin-top:1rem;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
 }
 
 
 .modal-body {
-  padding: 10px 10px;
+  padding: 2rem 14rem;
   border-radius: 0.8rem;
 }
 
