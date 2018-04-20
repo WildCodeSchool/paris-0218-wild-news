@@ -81,7 +81,7 @@ header {
   display: inline-block;
 }
 /*.navbar li:hover {
-	background-color: #e78914;
+  background-color: #e78914;
 }*/
 .add {
   float: right;
@@ -217,8 +217,8 @@ a.title-nav-bar {
 }
 
 #add-link textarea, #add-category textarea  {
-    background-color: white;
-    min-height: 10rem;
+  background-color: white;
+  min-height: 10rem;
 }
 
 #add-link button, #add-category button {
@@ -237,32 +237,32 @@ a.title-nav-bar {
 
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding: 3rem 0; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding: 3rem 0; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */
 .modal-content {
-    position: relative;
-    background-color: #eee;
-    margin: auto;
-    padding: 0;
-    width: 80%;
-    border-radius: 1.2rem;
-    box-shadow: 0 0.4rem 0.8rem 0 rgba(0,0,0,0.2),0 0.6rem 2rem 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s;
+  position: relative;
+  background-color: #eee;
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  border-radius: 1.2rem;
+  box-shadow: 0 0.4rem 0.8rem 0 rgba(0,0,0,0.2),0 0.6rem 2rem 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
 }
 
 .label-category {
@@ -270,46 +270,46 @@ display: none;}
 
 /* Add Animation */
 @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
 }
 
 @keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
 }
 
 /* The Close Button */
 
 .close, .closeCat {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+  color: #f7f0ea;
+  float: right;
+  padding-right: 1rem;
+  font-size: 2.8rem;
+  font-weight: 700;
 }
 
 .close:hover, .closeCat:hover
 .close:focus, .closeCat:focus {
-    color: #000;
-
-    text-decoration: none;
-    cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .modal-header {
-    padding: 1rem 1rem 0.4rem;
-    background-color: #faa944;
-    border-radius: 1.2rem 1.2rem 0 0;
-    color: white;
-    text-align: center;
+  padding: 1rem 1rem 0.4rem;
+  background-color: #faa944;
+  border-radius: 1.2rem 1.2rem 0 0;
+  color: white;
+  text-align: center;
 }
 
 .modal-header h2 {
-    margin-top:1rem;
-    font-size: 2rem;
-    font-weight: 500;
-    letter-spacing: .1rem;
-    text-transform: uppercase;
+  margin-top:1rem;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
 }
 
 

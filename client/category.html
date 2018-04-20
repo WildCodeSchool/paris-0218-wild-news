@@ -41,40 +41,7 @@
             <div id="navbar">
             </div>
 
-            <li class="add" id="btn-category">
-                Add
-                <div id="myModalCat" class="modal">
-                <!-- Modal content -->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <span class="closeCat">&times;</span>
-                                <h2>Create a new category</h2>
-                        </div>
-                                <div class="modal-body">
-                                    <form id="add-category">
-                        
-                                    <label>
-    Titre :
-    <input type="text" id="titre-category" name="titre category">
-    </label>
-    <label>
-                                    Description :
-    <textarea type="text"  id="description-category" name="description-category"></textarea>
-    </label>
-    <label>
-                                    Image of category :
-    <input type="text" id="img-category" name="image-category">
-    </label>
-    
-
-    <button type="submit" value="Create my category" onClick="window.parent.location.reload();window.close()">Create my category...</button>
-
-                                    </form>
-
-                                </div>
-                    </div>
-        </div>
-            </li>
+            <li class="add" id="btn-category">Add</li>
         </ul>
     </nav>
 </header>
@@ -96,51 +63,49 @@
         </article>
     </div>
 </section>
-
+<!-- POST BUTTON -->
 <section>
-<button id="myBtn">Post A Link!</button>
-
-        <div id="myModalLink" class="modal">
-                <!-- Modal content -->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <span class="close">&times;</span>
-                                <h2>Post a link</h2>
+    <button id="myBtn">Post A Link!</button>
+    <!-- MODAL POST BUTTON -->
+    <div id="myModalLink" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Post a link</h2>
+            </div>
+                <div class="modal-body">
+                    <form id="add-link">
+                        <label>
+                            Titre :
+                            <input type="text" id="titre-article" name="titre article">
+                        </label>
+                        <label>
+                            Description :
+                            <textarea type="text"  id="description-article" name="description-article"></textarea>
+                        </label>
+                        <label>
+                            Image article (URL) :
+                            <input type="text" id="img-article" name="image-article">
+                        </label>
+                        <label>
+                            Lien de votre article :
+                            <input type="text" id="lien-article" name="lien-article">
+                        </label>
+                        <label class="label-category">
+                            Catégorie :
+                            <input type="text" id="categorie-article" name="categorie-article">
+                        </label>
+                        <label>
+                            Auteur :
+                            <input type="text" id="auteur-article" name="auteur-article">
+                        </label>
+                        <div class="send-button">
+                            <button type="submit" value="Add my link" onClick="window.parent.location.reload();window.close()">POST MY LINK</button>
                         </div>
-                                <div class="modal-body">
-                                    <form id="add-link">
-                        
-                                    <label>
-                                    Titre :
-                                    <input type="text" id="titre-article" name="titre article">
-                                    </label>
-                                    <label>
-                                    Description :
-                                    <textarea type="text"  id="description-article" name="description-article"></textarea>
-                                    </label>
-                                    <label>
-                                    Image article (URL) :
-                                    <input type="text" id="img-article" name="image-article">
-                                    </label>
-                                    <label>
-                                    Lien de votre article :
-                                    <input type="text" id="lien-article" name="lien-article">
-                                    </label>
-                                    <label class="label-category">
-                                    Catégorie :
-                                    <input type="text" id="categorie-article" name="categorie-article">
-                                    </label>
-                                    <label>
-                                    Auteur :
-                                    <input type="text" id="auteur-article" name="auteur-article">
-                                    </label>
-                                    <button type="submit" value="Add my link" onClick="window.parent.location.reload();window.close()">POST MY LINK</button>
-
-                                    </form>
-
-                                </div>
-                    </div>
-
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -148,6 +113,36 @@
     <p>&copy;2018 Wild News</p>
 </footer>
 <script type="module" src="/js/category.js"></script>
+
+<!-- MODAL CAT BUTTON -->
+<div id="myModalCat" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="closeCat">&times;</span>
+            <h2>Create a new category</h2>
+        </div>
+        <div class="modal-body">
+            <form id="add-category">
+            <label>
+                Titre :
+                <input type="text" id="titre-category" name="titre category">
+            </label>
+            <label>
+                Description :
+                <textarea type="text"  id="description-category" name="description-category"></textarea>
+            </label>
+            <label>
+                Image of category :
+                <input type="text" id="img-category" name="image-category">
+            </label>
+            <div class="send-button">
+                <button type="submit" value="Create my category" onClick="window.parent.location.reload();window.close()">Create my category...</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>
