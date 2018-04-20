@@ -16,7 +16,9 @@
     <div class="headbar">
         <ul>
             <li id="logo">
+                <a href="http://localhost:5000/">
                 <img src="assets/logo_orange.png" alt="logo">
+                </a>
             </li>
             <li>
                 <h1>Wild News</h1>
@@ -29,26 +31,49 @@
             </li>
         </ul>
     </div>
-    <!-- navbar -->
+   <!-- navbar -->
     <nav class="navbar">
         <ul>
             <li>
-                <a href="">Home</a>
+                <a href="http://localhost:5000/">Home</a>
             </li>
-            <li>
-                <a href="">Tips</a>
-            </li>
-            <li>
-                <a href="">Javascript</a>
-            </li>
-            <li>
-                <a href="">React</a>
-            </li>
-            <li>
-                <a href="">Agile</a>
-            </li>
-            <li class="add">
-                <a href="">Add</a>
+            
+            <div id="navbar">
+            </div>
+
+            <li class="add" id="btn-category">
+                Add
+                <div id="myModalCat" class="modal">
+                <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="closeCat">&times;</span>
+                                <h2>Create a new category</h2>
+                        </div>
+                                <div class="modal-body">
+                                    <form id="add-category">
+                        
+                                    <label>
+    Titre :
+    <input type="text" id="titre-category" name="titre category">
+    </label>
+    <label>
+                                    Description :
+    <textarea type="text"  id="description-category" name="description-category"></textarea>
+    </label>
+    <label>
+                                    Image of category :
+    <input type="text" id="img-category" name="image-category">
+    </label>
+    
+
+    <button type="submit" value="Create my category" onClick="window.parent.location.reload();window.close()">Create my category...</button>
+
+                                    </form>
+
+                                </div>
+                    </div>
+        </div>
             </li>
         </ul>
     </nav>
@@ -74,44 +99,48 @@
 
 <section>
 <button id="myBtn">Post A Link!</button>
-    <div id="myModal" class="modal">
-    	<!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2>Post an article</h2>
-            </div>
-            <div class="modal-body">
-                <form id="add-link">
-		            <label>
-			            Titre :
-			            <input type="text" id="titre-article" name="titre article">
-		            </label>
-		            <label>
-			            Description :
-			            <textarea type="text"  id="description-article" name="description-article"></textarea>
-		            </label>
-		            <label>
-			            Image article (URL) :
-			            <input type="text" id="img-article" name="image-article">
-		            </label>
-		            <label>
-			            Lien de votre article :
-			            <input type="text" id="lien-article" name="lien-article">
-		            </label>
-		            <label class="label-category">
-			            Catégorie :
-			            <input type="text" id="categorie-article" name="categorie-article">
-		            </label>
-		            <label>
-			            Auteur :
-			            <input type="text" id="auteur-article" name="auteur-article">
-		            </label>
-		            <div class="send-button">
-		                <button type="submit" value="Add my link" onClick="window.parent.location.reload();window.close()">POST MY LINK</button>
-		            </div>
-                </form>
-            </div>
+
+        <div id="myModalLink" class="modal">
+                <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close">&times;</span>
+                                <h2>Post a link</h2>
+                        </div>
+                                <div class="modal-body">
+                                    <form id="add-link">
+                        
+                                    <label>
+                                    Titre :
+                                    <input type="text" id="titre-article" name="titre article">
+                                    </label>
+                                    <label>
+                                    Description :
+                                    <textarea type="text"  id="description-article" name="description-article"></textarea>
+                                    </label>
+                                    <label>
+                                    Image article (URL) :
+                                    <input type="text" id="img-article" name="image-article">
+                                    </label>
+                                    <label>
+                                    Lien de votre article :
+                                    <input type="text" id="lien-article" name="lien-article">
+                                    </label>
+                                    <label class="label-category">
+                                    Catégorie :
+                                    <input type="text" id="categorie-article" name="categorie-article">
+                                    </label>
+                                    <label>
+                                    Auteur :
+                                    <input type="text" id="auteur-article" name="auteur-article">
+                                    </label>
+                                    <button type="submit" value="Add my link" onClick="window.parent.location.reload();window.close()">POST MY LINK</button>
+
+                                    </form>
+
+                                </div>
+                    </div>
+
         </div>
     </div>
 </section>
