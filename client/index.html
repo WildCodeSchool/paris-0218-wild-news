@@ -2,56 +2,82 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Wild News</title>
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+  <meta charset="utf-8">
+  <title>Wild News</title>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
 </head>
 
 <body>
+
 <header>
-    <!-- headbar -->
-    <div class="headbar">
-        <ul>
-            <li id="logo">
-                <a href="http://localhost:5000/">
-                <img src="assets/logo_orange.png" alt="logo">
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:5000/">
-                <h1>Wild News</h1>
-                </a>
-            </li>
-            <li class="user">
-                <div>
-                    <div class="user-img"></div>
-                    <a href="">Log in - Sign in</a>
-                </div>
-            </li>
-        </ul>
-    </div>
+  <!-- headbar -->
+  <div class="headbar">
+    <ul>
+      <li id="logo">
+        <a href="http://localhost:5000/">
+        <img src="assets/logo_orange.png" alt="logo">
+        </a>
+      </li>
+      <li>
+        <h1>Wild News</h1>
+      </li>
+      <li class="user">
+        <div>
+          <div class="user-img"></div>
+          <a href="">Log in - Sign in</a>
+        </div>
+      </li>
+    </ul>
+  </div>
     <!-- navbar -->
-    <nav class="navbar">
-        <ul>
-            <li>
-                <a href="http://localhost:5000/">Home</a>
-            </li>
-            
-            <div id="navbar">
+  <nav class="navbar">
+    <ul>
+      <li>
+        <a href="http://localhost:5000/">Home</a>
+      </li>
+
+      <!-- INSERTION DES CATEGORIES -->
+      <div id="navbar">             
+      </div>
+
+      <li class="add" id="btn-category">
+        Add
+        <div id="myModalCat" class="modal">
+        <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">&times;</span>
+              <h2>Create a new category</h2>
             </div>
+            <div class="modal-body">
+              <form id="add-category">
+                <label>
+                  Titre :
+                  <input type="text" id="titre-category" name="titre category">
+                </label>
+                <label>
+                  Description :
+                  <textarea type="text"  id="description-category" name="description-category"></textarea>
+                </label>
+                <label>
+                  Image of category :
+                  <input type="text" id="img-category" name="image-category">
+                </label>
+                
+                <button type="submit" value="Create my category" onClick="window.parent.location.reload();window.close()">
+                  Create my category...
+                </button>
+              </form>
 
-            <li class="add" id="btn-category">
-                Add
-
-            </li>
-        </ul>
-    </nav>
-
-    
-    
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </nav>
 </header>
 
 <section class="container">
