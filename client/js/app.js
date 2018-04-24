@@ -3,7 +3,7 @@ import { createNewPost } from '/components/block-article-index.js'
 import { createNavBar } from '/components/nav-bar.js'
 
 // =========FETCH OF ALL POSTS============== //
-fetch('http://localhost:3000/post')
+window.fetch('http://localhost:3000/post')
   .then(response => response.json())
   .then(posts => { // get all posts
     const postsElementTips = document.getElementById('posts-tips')
@@ -30,7 +30,7 @@ document.getElementById('add-category').addEventListener('submit', event => { //
   const image = document.getElementById('img-category').value
 
   // Use fetch to post data into the mock
-  fetch('http://localhost:3000/category', {
+  window.fetch('http://localhost:3000/category', {
     method: 'post',
     body: JSON.stringify({
       title,
@@ -69,7 +69,7 @@ window.onclick = function (event) {
 
 // ========= FETCH NAVBAR DYNAMIC============== //
 // +++++++++TEST TO SORT DATA ON SERVER SIDE+++++++ //
-fetch('http://localhost:3000/navbar')
+window.fetch('http://localhost:3000/navbar')
   .then(response => response.json())
   .then(categories => { // get array with only categories names (array is create on server side: see app.js)
     const categoriesList = document.getElementById('navbar')

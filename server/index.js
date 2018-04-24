@@ -52,9 +52,7 @@ app.get('/post', (request, response) => {
 
 // ==============GET CATEGORY BY ID==============//
 app.get('/category/:name', (request, response) => {
-
   const postsDir = path.join(__dirname, '../', 'mocks/posts') // make the beginning of the path: add / and join everything
-
   readdir(postsDir) // get every element of the files but only the names (in our case: post1.json)
     .then(files => Promise.all(files // take array of promise and convert it array of values
       .map(file => path.join(postsDir, file))
@@ -82,7 +80,6 @@ app.get('/post/:id', (request, response) => {
 // ==============GET NAV BAR==============//
 // +++TEST TO SORT DATA ON SERVER SIDE++++/
 app.get('/navbar', (request, response) => {
-
   const navBarDir = path.join(__dirname, '../', 'mocks/category') // make the path: /Users/guillaume/Desktop/paris-0218-wild-news/mocks/category
   readdir(navBarDir) // read every files of mocks/category, so category1.json, category2.json and so on
     .then(files => {
