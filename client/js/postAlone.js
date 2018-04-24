@@ -5,7 +5,7 @@ const params = new URLSearchParams(window.location.search)
 const id = params.get('id')
 
 // =========FETCH POST BY ID============//
-fetch(`http://localhost:3000/post/${id}`) // get post id
+window.fetch(`http://localhost:3000/post/${id}`) // get post id
   .then(response => response.json())
   .then(post => {
     const postSeul = document.getElementById('postAlone')
@@ -20,7 +20,7 @@ document.getElementById('add-category').addEventListener('submit', event => { //
   const description = document.getElementById('description-category').value
   const image = document.getElementById('img-category').value
   // Fetch which post data of the new category
-  fetch('http://localhost:3000/category', {
+  window.fetch('http://localhost:3000/category', {
     method: 'post',
     body: JSON.stringify({
       title,
@@ -31,7 +31,7 @@ document.getElementById('add-category').addEventListener('submit', event => { //
 })
 
 // =========ADD NAVBAR DYNAMIC==============//
-fetch('http://localhost:3000/navbar')
+window.fetch('http://localhost:3000/navbar')
   .then(response => response.json())
   .then(categories => { // get array of categories title (see index.js)
     const categoriesList = document.getElementById('navbar')

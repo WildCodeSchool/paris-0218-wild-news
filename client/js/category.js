@@ -6,7 +6,7 @@ const params = new URLSearchParams(window.location.search) // get all params of 
 const name = params.get('name') // get only the param name of URL (in our case the category name)
 
 // =========FETCH OF CATEGORY BY NAME==============//
-fetch(`http://localhost:3000/category/${name}`)
+window.fetch(`http://localhost:3000/category/${name}`)
   .then(response => response.json())
   .then(posts => { // get all posts of mock
     const postsElementTips = document.getElementById('posts-tips')
@@ -18,7 +18,7 @@ fetch(`http://localhost:3000/category/${name}`)
   })
 
 // =========ADD NAVBAR DYNAMIC==============//
-fetch('http://localhost:3000/navbar')
+window.fetch('http://localhost:3000/navbar')
   .then(response => response.json())
   .then(categories => { // get array of categories title (sort on server side in index.js)
     const categoriesList = document.getElementById('navbar')
@@ -34,7 +34,7 @@ document.getElementById('add-category').addEventListener('submit', event => { //
   const description = document.getElementById('description-category').value
   const image = document.getElementById('img-category').value
   // Fetch which post data of new category
-  fetch('http://localhost:3000/category', {
+  window.fetch('http://localhost:3000/category', {
     method: 'post',
     body: JSON.stringify({
       title,
@@ -107,7 +107,7 @@ document.getElementById('add-link').addEventListener('submit', event => {
   const author = document.getElementById('author-article').value
 
   // Fetch which post data of new link in mock
-  fetch('http://localhost:3000/post', {
+  window.fetch('http://localhost:3000/post', {
     method: 'post',
     body: JSON.stringify({
       title,
