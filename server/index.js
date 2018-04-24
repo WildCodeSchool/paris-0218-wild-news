@@ -3,7 +3,7 @@ const express = require('express')
 const fs = require('fs')
 const path = require('path')
 const util = require('util')                          //  Filesystem
-const readFile = util.promisify(fs.readFile)          //  Util. pour les chemins d'accès
+const readFile = util.promisify(fs.readFile)          //  Util. for path
 const readdir = util.promisify(fs.readdir)
 const writeFile = util.promisify(fs.writeFile)
 const app = express()
@@ -41,10 +41,10 @@ app.get('/', (request, response) => {
 
 //==============GET ALL POSTS==============//
 app.get('/post', (request, response) => {
-  const postsDir = path.join(__dirname,'../', 'mocks/posts') // construit URL : path ajoute des / et join réunit tout
-  readdir(postsDir) // récupère tous les noms de fichiers mais seulement les noms pas chemin complet , en l'occurence post1.json
+  const postsDir = path.join(__dirname,'../', 'mocks/posts') // make the beginning of the path: add / and join everything
+  readdir(postsDir) // get every element of the files but only the names (in our case: post1.json)
     .then(files => Promise.all(files
-      .map(file => path.join(postsDir, file))
+      .map(file => path.join(postsDir, file)) // get the complete path by joining postsDir and file
       .map(filepath => readFile(filepath, 'utf8'))))
 
     .then(allFilesValues => response.json(allFilesValues.map(JSON.parse)))
@@ -54,10 +54,10 @@ app.get('/post', (request, response) => {
 //==============GET CATEGORY BY ID==============//
 app.get('/category/:name', (request, response) => {
 
-  const postsDir = path.join(__dirname,'../', 'mocks/posts') // construit URL : path ajoute des / et join réunit tout
+  const postsDir = path.join(__dirname,'../', 'mocks/posts') // make the beginning of the path: add / and join everything
 
-  readdir(postsDir) // récupère tous les noms de fichiers mais seulement les noms pas chemin complet , en l'occurence post1.json
-    .then(files => Promise.all(files //prendre un tableau de promesses et le convertir en tableau de valeur des promesses
+  readdir(postsDir) // get every element of the files but only the names (in our case: post1.json)
+    .then(files => Promise.all(files // take array of promise and convert it array of values
       .map(file => path.join(postsDir, file))
       .map(filepath => readFile(filepath, 'utf8'))))
 
@@ -67,7 +67,7 @@ app.get('/category/:name', (request, response) => {
 
 //=============GET POST BY ID==============//
 app.get('/post/:id', (request, response) => {
-  const fileName = `post${request.params.id}.json`  //Pour les posts ajouter manuellement via btn add post, virer la partie post
+  const fileName = `post${request.params.id}.json`  // !!!!!!!! For post add with the form we will have to remove the 'post' otherwise the path will not be good
   const filepath = path.join(__dirname,'../', 'mocks/posts', fileName)
 
   readFile(filepath)
@@ -81,23 +81,23 @@ app.get('/post/:id', (request, response) => {
 })
 
 //==============GET NAV BAR==============//
-//===========Test tri des données sur serveur===========/
+//+++TEST TO SORT DATA ON SERVER SIDE++++/
 app.get('/navbar', (request, response) => {
 
-  const navBarDir = path.join(__dirname,'../', 'mocks/category') // construit chemin vers dossier category : /Users/guillaume/Desktop/paris-0218-wild-news/mocks/category
-  readdir(navBarDir) // Lit chaque fichier du dossier mocks/category, donc category1.json, category2.json etc
+  const navBarDir = path.join(__dirname,'../', 'mocks/category') // make the path: /Users/guillaume/Desktop/paris-0218-wild-news/mocks/category
+  readdir(navBarDir) // read every files of mocks/category, so category1.json, category2.json and so on
     .then(files => {
 
-      const filepaths = files.map(file => path.join(navBarDir, file)) //pour chaque fichier joindre navBarDir et le nom du fichier => /Users/guillaume/Desktop/paris-0218-wild-news/mocks/category/ + category1.json
+      const filepaths = files.map(file => path.join(navBarDir, file)) //for every file join navBarDir and the file name => /Users/guillaume/Desktop/paris-0218-wild-news/mocks/category/ + category1.json
       const allFiles = filepaths.map(filepath => {
-        return readFile(filepath, 'utf8') // return tout ça en utf8
+        return readFile(filepath, 'utf8') // return the result in utf8
       })
 
-      Promise.all(allFiles) // Promise permet d'attendre que toutes les données soient prêtes (sinon renvoie un tableau vide)
+      Promise.all(allFiles) // Promise: wait for all the data to be ready (otherwise, we get an empty array)
       .then(allFilesValues => {
         const valuesInJason = allFilesValues.map(JSON.parse)
         const arrTitle = []
-        for (let i=0; i<valuesInJason.length; i++) {          //Remplacer par un .map si possible
+        for (let i=0; i<valuesInJason.length; i++) {          //Ugly but it works, replace by a .map if possible
           if (valuesInJason[i].title !== null) {
             arrTitle.push(valuesInJason[i].title)
           }
@@ -126,9 +126,9 @@ app.post('/post', (request, response, next) => {
     createdAt: Date.now(),
     text: request.body.description,
     image : request.body.image,
-    source: request.body.lien,
-    category : request.body.categorie,
-    author: request.body.auteur
+    source: request.body.link,
+    category : request.body.category,
+    author: request.body.author
   }
   writeFile(filepath, JSON.stringify(content), 'utf8')
     .then(() => response.json('OK'))
@@ -153,4 +153,4 @@ app.post('/category', (request, response, next) => {
 })
 
 //==============PORT==============//
-app.listen(3000, () => console.log("j'écoute sur le port 3000"))
+app.listen(3000, () => console.log("listening on 3000"))

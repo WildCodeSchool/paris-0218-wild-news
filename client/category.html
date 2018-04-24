@@ -48,14 +48,14 @@
         <!-- Modal content -->
           <div class="modal-content">
             <div class="modal-header">
-              <span class="close">&times;</span>
+              <span class="closeCat">&times;</span>
               <h2>Create a new category</h2>
             </div>
             <div class="modal-body">
               <form id="add-category">
                 <label>
-                  Titre :
-                  <input type="text" id="titre-category" name="titre category">
+                  Title :
+                  <input type="text" id="title-category" name="title category">
                 </label>
                 <label>
                   Description :
@@ -100,20 +100,21 @@
 
 <!-- POST BUTTON -->
 <section>
-  <button id="myBtn">Post A Link!</button>
+  <button id="myBtnLink">Post A Link!</button>
   <!-- MODAL POST BUTTON -->
+
   <div id="myModalLink" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
       <div class="modal-header">
-        <span class="close">&times;</span>
+        <span class="closeLink">&times;</span>
         <h2>Post a link</h2>
       </div>
       <div class="modal-body">
         <form id="add-link">
           <label>
-            Titre :
-            <input type="text" id="titre-article" name="titre article">
+            Title :
+            <input type="text" id="title-article" name="title article">
           </label>
           <label>
             Description :
@@ -125,15 +126,15 @@
           </label>
           <label>
             Lien de votre article :
-            <input type="text" id="lien-article" name="lien-article">
+            <input type="text" id="link-article" name="link-article">
           </label>
           <label class="label-category">
             Catégorie :
-            <input type="text" id="categorie-article" name="categorie-article">
+            <input type="text" id="category-article" name="category-article">
           </label>
           <label>
             Auteur :
-            <input type="text" id="auteur-article" name="auteur-article">
+            <input type="text" id="author-article" name="author-article">
           </label>
           
           <div class="send-button">
@@ -143,6 +144,8 @@
       </div>
     </div>
   </div>
+
+
 </section>
 
 <footer>
@@ -150,38 +153,6 @@
 </footer>
 
 <script type="module" src="/js/category.js"></script>
-
-<!-- MODAL CAT BUTTON -->
-<div id="myModalCat" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="closeCat">&times;</span>
-      <h2>Create a new category</h2>
-    </div>
-    <div class="modal-body">
-      <form id="add-category">
-        <label>
-          Titre :
-          <input type="text" id="titre-category" name="titre category">
-        </label>
-        <label>
-          Description :
-          <textarea type="text"  id="description-category" name="description-category"></textarea>
-        </label>
-        <label>
-          Image of category :
-          <input type="text" id="img-category" name="image-category">
-        </label>
-        <div class="send-button">
-          <button type="submit" value="Create my category" onClick="window.parent.location.reload();window.close()">
-            Create my category...
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
 
 </body>
 

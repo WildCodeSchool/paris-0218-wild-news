@@ -1,6 +1,6 @@
 export
-const createNewTitle = (monPost) =>
+const createNewTitle = (myPost) =>
 `
-<h2 class="cat-title">${monPost.toUpperCase()}</h2>
-<img src="assets/${monPost}.png" alt="${monPost}" class="cat-img">
+<h2 class="cat-title">${myPost.toUpperCase()}</h2>
+<img src="assets/${myPost}.png" alt="${myPost}" class="cat-img">
 `
