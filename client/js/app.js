@@ -5,7 +5,7 @@ import { createNavBar } from '/components/nav-bar.js'
 // =========FETCH OF ALL POSTS============== //
 fetch('http://localhost:3000/post')
   .then(response => response.json())
-  .then(posts => {// get all posts
+  .then(posts => { // get all posts
     const postsElementTips = document.getElementById('posts-tips')
     const postsCategory1 = posts.filter(post => post.category === 'tips') // filter posts by category (in that case only posts of 'tips' category)
     const sortCategory1 = postsCategory1.sort((a, b) => b.createdAt - a.createdAt).slice(0, 3) // order in descending order and slice array of tips posts

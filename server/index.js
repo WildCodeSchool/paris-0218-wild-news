@@ -95,9 +95,9 @@ app.get('/navbar', (request, response) => {
         .then(allFilesValues => {
           const valuesInJason = allFilesValues.map(JSON.parse)
           const arrTitle = []
-          for (let i = 0; i < valuesInJason.length; i++) {//replace by a .map if possible
-          if (valuesInJason[i].title !== null) {
-            arrTitle.push(valuesInJason[i].title)
+          for (let i = 0; i < valuesInJason.length; i++) { // replace by a .map if possible
+            if (valuesInJason[i].title !== null) {
+              arrTitle.push(valuesInJason[i].title)
             }
           }
           response.json(arrTitle)

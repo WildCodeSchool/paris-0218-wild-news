@@ -106,7 +106,7 @@ document.getElementById('add-link').addEventListener('submit', event => {
   // const category = document.getElementById('category-article').values
   const author = document.getElementById('author-article').value
 
-// Fetch which post data of new link in mock
+  // Fetch which post data of new link in mock
   fetch('http://localhost:3000/post', {
     method: 'post',
     body: JSON.stringify({
