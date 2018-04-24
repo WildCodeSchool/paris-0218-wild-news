@@ -2,8 +2,8 @@
 const express = require('express')
 const fs = require('fs')
 const path = require('path')
-const util = require('util')  //  Filesystem
-const readFile = util.promisify(fs.readFile)  //  Util. for path
+const util = require('util')  // Filesystem
+const readFile = util.promisify(fs.readFile)  // Util. for path
 const readdir = util.promisify(fs.readdir)
 const writeFile = util.promisify(fs.writeFile)
 const app = express()
@@ -66,7 +66,7 @@ app.get('/category/:name', (request, response) => {
 
 // =============GET POST BY ID==============//
 app.get('/post/:id', (request, response) => {
-  const fileName = `post${request.params.id}.json`  // !!!!!!!! For post add with the form we will have to remove the 'post' otherwise the path will not be good
+  const fileName = `post${request.params.id}.json` // !!!!!!!! For post add with the form we will have to remove the 'post' otherwise the path will not be good
   const filepath = path.join(__dirname,'../', 'mocks/posts', fileName)
 
   readFile(filepath)
@@ -86,7 +86,6 @@ app.get('/navbar', (request, response) => {
   const navBarDir = path.join(__dirname, '../', 'mocks/category') // make the path: /Users/guillaume/Desktop/paris-0218-wild-news/mocks/category
   readdir(navBarDir) // read every files of mocks/category, so category1.json, category2.json and so on
     .then(files => {
-
       const filepaths = files.map(file => path.join(navBarDir, file)) // for every file join navBarDir and the file name => /Users/guillaume/Desktop/paris-0218-wild-news/mocks/category/ + category1.json
       const allFiles = filepaths.map(filepath => {
         return readFile(filepath, 'utf8') // return the result in utf8
@@ -97,11 +96,11 @@ app.get('/navbar', (request, response) => {
           const valuesInJason = allFilesValues.map(JSON.parse)
           const arrTitle = []
             for (let i = 0; i < valuesInJason.length; i++) {  // Ugly but it works, replace by a .map if possible
-              if (valuesInJason[i].title !== null) {
-                arrTitle.push(valuesInJason[i].title)
-              }
+          if (valuesInJason[i].title !== null) {
+              arrTitle.push(valuesInJason[i].title)
             }
-            response.json(arrTitle)
+          }
+          response.json(arrTitle)
           })
 
         .catch(err => {
@@ -112,10 +111,8 @@ app.get('/navbar', (request, response) => {
 
 // ==============POST NEW POST==============//
 app.post('/post', (request, response, next) => {
-
   console.log('ok')
   response.send('ok')
-
   const id = Math.random().toString(36).slice(2).padEnd(11, '0')
   const filename = `${id}.json`
   const filepath = path.join(__dirname, '../mocks/posts', filename)

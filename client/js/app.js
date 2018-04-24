@@ -30,15 +30,15 @@ document.getElementById('add-category').addEventListener('submit', event => { //
   const image = document.getElementById('img-category').value
 
   // Use fetch to post data into the mock
-fetch('http://localhost:3000/category', {
-  method: 'post',
-    body: JSON.stringify({
-      title,
-      description,
-      image
-    })
-  }).then(res => console.log(res.status))
-})
+  fetch('http://localhost:3000/category', {
+    method: 'post',
+      body: JSON.stringify({
+        title,
+        description,
+        image
+      })
+    }).then(res => console.log(res.status))
+  })
 
 // =========OPEN FORM TO ADD CATEGORY============== //
 // Get the modal
@@ -69,13 +69,10 @@ window.onclick = function (event) {
 
 // ========= FETCH NAVBAR DYNAMIC============== //
 // +++++++++TEST TO SORT DATA ON SERVER SIDE+++++++ //
-fetch('http://localhost:3000/navbar')
-  .then(response => response.json())
-  .then(categories => { // get array with only categories names (array is create on server side: see app.js)
-
-    const categoriesList = document.getElementById('navbar')
-
-    const categoryList = categories.map(createNavBar).join('') // get module function and apply it to every element
-
-    categoriesList.innerHTML = categoryList // insert in HTML
-  })
+  fetch('http://localhost:3000/navbar')
+    .then(response => response.json())
+    .then(categories => { // get array with only categories names (array is create on server side: see app.js)
+      const categoriesList = document.getElementById('navbar')
+      const categoryList = categories.map(createNavBar).join('') // get module function and apply it to every element
+      categoriesList.innerHTML = categoryList // insert in HTML
+    })

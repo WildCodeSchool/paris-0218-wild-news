@@ -8,9 +8,9 @@ const id = params.get('id')
 fetch(`http://localhost:3000/post/${id}`) // get post id
   .then(response => response.json())
   .then(post => {
-  const postSeul = document.getElementById('postAlone')
-  postSeul.innerHTML = createNewPost(post)
-})
+    const postSeul = document.getElementById('postAlone')
+    postSeul.innerHTML = createNewPost(post)
+  })
 
 // =========ADD CATEGORY VIA BUTON==============//
 document.getElementById('add-category').addEventListener('submit', event => { // get button and event

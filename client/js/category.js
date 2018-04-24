@@ -28,7 +28,7 @@ fetch('http://localhost:3000/navbar')
 
 // =========ADD CATEGORY VIA BUTTON ADD==============//
 document.getElementById('add-category').addEventListener('submit', event => { // get button ID and event
-  event.preventDefault() //prevent reload of page on submit
+  event.preventDefault() // prevent reload of page on submit
   // get values of form: title, description,...
   const title = document.getElementById('title-category').value
   const description = document.getElementById('description-category').value
@@ -66,9 +66,12 @@ spanCat.onclick = function () {
 }
 
 // When the user clicks anywhere outside of the modal, close it
+// regroup function of category and post to avoid conflict
 window.onclick = function (event) {
   if (event.target === modalCat) {
-    modalCat.style.display = none
+    modalCat.style.display = 'none'
+  } else if (event.target === modalLink) {
+    modalLink.style.display = 'none'
   }
 }
 // =========OPEN FORM POST LINK==============//
@@ -91,12 +94,6 @@ spanLink.onclick = function () {
   modalLink.style.display = 'none'
 }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target === modalLink) {
-    modalLink.style.display = 'none'
-  }
-}
 
 // =========ADD LINK============//
 
@@ -107,7 +104,7 @@ document.getElementById('add-link').addEventListener('submit', event => {
   const description = document.getElementById('description-article').value
   const image = document.getElementById('img-article').value
   const link = document.getElementById('link-article').value
-  const category = document.getElementById('category-article').value
+  // const category = document.getElementById('category-article').values
   const author = document.getElementById('author-article').value
 
 // Fetch which post data of new link in mock
