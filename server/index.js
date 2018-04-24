@@ -2,8 +2,8 @@
 const express = require('express')
 const fs = require('fs')
 const path = require('path')
-const util = require('util')  // Filesystem
-const readFile = util.promisify(fs.readFile)  // Util. for path
+const util = require('util')// Filesystem
+const readFile = util.promisify(fs.readFile)// Util. for path
 const readdir = util.promisify(fs.readdir)
 const writeFile = util.promisify(fs.writeFile)
 const app = express()
@@ -67,7 +67,7 @@ app.get('/category/:name', (request, response) => {
 // =============GET POST BY ID==============//
 app.get('/post/:id', (request, response) => {
   const fileName = `post${request.params.id}.json` // !!!!!!!! For post add with the form we will have to remove the 'post' otherwise the path will not be good
-  const filepath = path.join(__dirname,'../', 'mocks/posts', fileName)
+  const filepath = path.join(__dirname, '../', 'mocks/posts', fileName)
 
   readFile(filepath)
     .then(data => {
@@ -95,13 +95,13 @@ app.get('/navbar', (request, response) => {
         .then(allFilesValues => {
           const valuesInJason = allFilesValues.map(JSON.parse)
           const arrTitle = []
-            for (let i = 0; i < valuesInJason.length; i++) {  // Ugly but it works, replace by a .map if possible
+          for (let i = 0; i < valuesInJason.length; i++) {//replace by a .map if possible
           if (valuesInJason[i].title !== null) {
-              arrTitle.push(valuesInJason[i].title)
+            arrTitle.push(valuesInJason[i].title)
             }
           }
           response.json(arrTitle)
-          })
+        })
 
         .catch(err => {
           response.status(500).end(err.message)

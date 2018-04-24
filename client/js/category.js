@@ -94,7 +94,6 @@ spanLink.onclick = function () {
   modalLink.style.display = 'none'
 }
 
-
 // =========ADD LINK============//
 
 // Récupère les valeurs des élèments et l'évènement
@@ -108,15 +107,15 @@ document.getElementById('add-link').addEventListener('submit', event => {
   const author = document.getElementById('author-article').value
 
 // Fetch which post data of new link in mock
-    fetch('http://localhost:3000/post', {
-      method: 'post',
-      body: JSON.stringify({
-        title,
-        description,
-        image,
-        link,
-        category: `${name}`,
-        author
-      })
-    }).then(res => console.log(res.status))
+  fetch('http://localhost:3000/post', {
+    method: 'post',
+    body: JSON.stringify({
+      title,
+      description,
+      image,
+      link,
+      category: `${name}`,
+      author
+    })
+  }).then(res => console.log(res.status))
 })

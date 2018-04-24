@@ -5,7 +5,7 @@ import { createNavBar } from '/components/nav-bar.js'
 // =========FETCH OF ALL POSTS============== //
 fetch('http://localhost:3000/post')
   .then(response => response.json())
-  .then(posts => {  // get all posts
+  .then(posts => {// get all posts
     const postsElementTips = document.getElementById('posts-tips')
     const postsCategory1 = posts.filter(post => post.category === 'tips') // filter posts by category (in that case only posts of 'tips' category)
     const sortCategory1 = postsCategory1.sort((a, b) => b.createdAt - a.createdAt).slice(0, 3) // order in descending order and slice array of tips posts
@@ -32,13 +32,13 @@ document.getElementById('add-category').addEventListener('submit', event => { //
   // Use fetch to post data into the mock
   fetch('http://localhost:3000/category', {
     method: 'post',
-      body: JSON.stringify({
-        title,
-        description,
-        image
-      })
-    }).then(res => console.log(res.status))
-  })
+    body: JSON.stringify({
+      title,
+      description,
+      image
+    })
+  }).then(res => console.log(res.status))
+})
 
 // =========OPEN FORM TO ADD CATEGORY============== //
 // Get the modal
@@ -69,10 +69,10 @@ window.onclick = function (event) {
 
 // ========= FETCH NAVBAR DYNAMIC============== //
 // +++++++++TEST TO SORT DATA ON SERVER SIDE+++++++ //
-  fetch('http://localhost:3000/navbar')
-    .then(response => response.json())
-    .then(categories => { // get array with only categories names (array is create on server side: see app.js)
-      const categoriesList = document.getElementById('navbar')
-      const categoryList = categories.map(createNavBar).join('') // get module function and apply it to every element
-      categoriesList.innerHTML = categoryList // insert in HTML
-    })
+fetch('http://localhost:3000/navbar')
+  .then(response => response.json())
+  .then(categories => { // get array with only categories names (array is create on server side: see app.js)
+    const categoriesList = document.getElementById('navbar')
+    const categoryList = categories.map(createNavBar).join('') // get module function and apply it to every element
+    categoriesList.innerHTML = categoryList // insert in HTML
+  })
