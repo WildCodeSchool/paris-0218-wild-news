@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
 <header>
   <!-- headbar -->
   <div class="headbar">
@@ -38,7 +39,7 @@
         <a href="http://localhost:5000/">Home</a>
       </li>
 
-      <!-- INSERTION DES CATEGORIES -->
+      <!-- INSERT CATEGORIES -->
       <div id="navbar">             
       </div>
 
@@ -81,79 +82,30 @@
 
 
 <section class="container">
-  <!-- Block category -->
   <div class="row">
     <article class="column column-100">
       <div class="cat-left">
-        <!-- INSERTION EN-TETE CATEGORIE -->
-        <div id="category-title">
-        </div>
-        <!-- INSERTION POSTS DE LA CATEGORIE -->
+        
+        <!-- INSERT BLOCKS OF CATEGORIES -->
         <div class="article container">
-          <div id="posts-tips">
+          <!-- INSERT POSTS -->
+          <div id="post-alone">
           </div>
         </div>
+
       </div>
     </article>
   </div>
-</section>
-
-<!-- POST BUTTON -->
-<section>
-  <button id="my-btn-link">Post A Link!</button>
-  <!-- MODAL POST BUTTON -->
-
-  <div id="my-modal-link" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <div class="modal-header">
-        <span class="close-link">&times;</span>
-        <h2>Post a link</h2>
-      </div>
-      <div class="modal-body">
-        <form id="add-link">
-          <label>
-            Title :
-            <input type="text" id="title-article" name="title article">
-          </label>
-          <label>
-            Description :
-            <textarea type="text"  id="description-article" name="description-article"></textarea>
-          </label>
-          <label>
-            Image article (URL) :
-            <input type="text" id="img-article" name="image-article">
-          </label>
-          <label>
-            Lien de votre article :
-            <input type="text" id="link-article" name="link-article">
-          </label>
-          <label class="label-category">
-            Catégorie :
-            <input type="text" id="category-article" name="category-article">
-          </label>
-          <label>
-            Auteur :
-            <input type="text" id="author-article" name="author-article">
-          </label>
-          
-          <div class="send-button">
-            <button type="submit" value="Add my link" onclick="window.parent.location.reload();window.close()">POST MY LINK</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-
 </section>
 
 <footer>
   <p>&copy;2018 Wild News</p>
 </footer>
 
-<script type="module" src="/js/category.js"></script>
+<script type="module" src="/js/postAlone.js"></script>
 
 </body>
 
 </html>
+
+

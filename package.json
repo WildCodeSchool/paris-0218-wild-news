@@ -6,6 +6,7 @@
     "test": "echo 'no tests'",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
     "lint:js": "standard | snazzy",
+    "lint:fix": "standard --fix | snazzy",
     "lint:css": "stylelint 'client/style/**/*.css'",
     "lint:html": "htmllint 'client/**/*.html'"
   },
