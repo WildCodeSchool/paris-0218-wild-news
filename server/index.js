@@ -73,7 +73,7 @@ app.get('/post/:id', (request, response) => {
       response.end(data)
     })
     .catch(err => {
-      response.status(404).end('Post introuvable')
+      response.status(404).end(err.message)
     })
 })
 

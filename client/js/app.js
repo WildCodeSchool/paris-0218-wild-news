@@ -1,3 +1,4 @@
+
 // =========IMPORT COMPONENTS============== //
 import { createNewPost } from '/components/block-article-index.js'
 import { createNavBar } from '/components/nav-bar.js'
@@ -42,13 +43,13 @@ document.getElementById('add-category').addEventListener('submit', event => { //
 
 // =========OPEN FORM TO ADD CATEGORY============== //
 // Get the modal
-const modalCat = document.getElementById('myModalCat')
+const modalCat = document.getElementById('my-modal-cat')
 
 // Get the button that opens the modal
 const btnCat = document.getElementById('btn-category')
 
 // Get the <span> element that closes the modal
-const spanCat = document.getElementsByClassName('closeCat')[0]
+const spanCat = document.getElementsByClassName('close-cat')[0]
 
 // When the user clicks the button, open the modal
 btnCat.onclick = function () {

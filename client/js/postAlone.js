@@ -1,3 +1,5 @@
+/* global URLSearchParams */
+
 // =========IMPORT COMPONENTS==============//
 import { createNewPost } from '/components/block-article-alone.js'
 import { createNavBar } from '/components/nav-bar.js'
@@ -8,7 +10,7 @@ const id = params.get('id')
 window.fetch(`http://localhost:3000/post/${id}`) // get post id
   .then(response => response.json())
   .then(post => {
-    const postSeul = document.getElementById('postAlone')
+    const postSeul = document.getElementById('post-alone')
     postSeul.innerHTML = createNewPost(post)
   })
 
@@ -42,13 +44,13 @@ window.fetch('http://localhost:3000/navbar')
 // =========OPEN FORM ADD CATEGORY============//
 
 // Get the modal
-const modalCat = document.getElementById('myModalCat')
+const modalCat = document.getElementById('my-modal-cat')
 
 // Get the button that opens the modal
 const btnCat = document.getElementById('btn-category')
 
 // Get the <span> element that closes the modal
-const spanCat = document.getElementsByClassName('closeCat')[0]
+const spanCat = document.getElementsByClassName('close-cat')[0]
 
 // When the user clicks the button, open the modal
 btnCat.onclick = function () {

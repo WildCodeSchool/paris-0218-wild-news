@@ -1,3 +1,4 @@
+/* global URLSearchParams */
 // =========IMPORT COMPONENTS==============//
 import { createNewPost } from '/components/block-category.js'
 import { createNewTitle } from '/components/block-title-category.js'
@@ -47,13 +48,13 @@ document.getElementById('add-category').addEventListener('submit', event => { //
 // =========OPEN FORM ADD CATEGORY============//
 
 // Get the modal
-const modalCat = document.getElementById('myModalCat')
+const modalCat = document.getElementById('my-modal-cat')
 
 // Get the button that opens the modal
 const btnCat = document.getElementById('btn-category')
 
 // Get the <span> element that closes the modal
-const spanCat = document.getElementsByClassName('closeCat')[0]
+const spanCat = document.getElementsByClassName('close-cat')[0]
 
 // When the user clicks the button, open the modal
 btnCat.onclick = function () {
@@ -76,13 +77,13 @@ window.onclick = function (event) {
 }
 // =========OPEN FORM POST LINK==============//
 // Get the modal
-const modalLink = document.getElementById('myModalLink')
+const modalLink = document.getElementById('my-modal-link')
 
 // Get the button that opens the modal
-const btnLink = document.getElementById('myBtnLink')
+const btnLink = document.getElementById('my-btn-link')
 
 // Get the <span> element that closes the modal
-const spanLink = document.getElementsByClassName('closeLink')[0]
+const spanLink = document.getElementsByClassName('close-link')[0]
 
 // When the user clicks the button, open the modal
 btnLink.onclick = function () {

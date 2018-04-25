@@ -45,11 +45,11 @@
 
       <li class="add" id="btn-category">
         Add
-        <div id="myModalCat" class="modal">
+        <div id="my-modal-cat" class="modal">
         <!-- Modal content -->
           <div class="modal-content">
             <div class="modal-header">
-              <span class="closeCat">&times;</span>
+              <span class="close-cat">&times;</span>
               <h2>Create a new category</h2>
             </div>
             <div class="modal-body">
@@ -67,7 +67,7 @@
                   <input type="text" id="img-category" name="image-category">
                 </label>
                 
-                <button type="submit" value="Create my category" onClick="window.parent.location.reload();window.close()">
+                <button type="submit" value="Create my category" onclick="window.parent.location.reload();window.close()">
                   Create my category...
                 </button>
               </form>
@@ -102,7 +102,6 @@
                 <div class="article container">
 
                     <div id="posts-tips">
-                       
                     </div>
   
                 </div>
@@ -116,39 +115,33 @@
         </article>
 
     <!-- Block category 2 -->
-    <div class="row">
         <article class="column column-100">
             <div class="cat-left">
-                
-                <h2 class="cat-title">Javascript</h2>
-               
-                <div class="article container">
-
-                    <div id="posts-javascript">
-                       
-                    </div>
-  
+              <h2 class="cat-title">Javascript</h2>
+              <div class="article container">
+                <div id="posts-javascript">
                 </div>
+              </div>
 
-                <div class="cat-button">
-                    <a href="http://localhost:5000/category.html?name=javascript">
-                    <button>More</button>
-                    </a>
-                </div>
+              <div class="cat-button">
+                <a href="http://localhost:5000/category.html?name=javascript">
+                <button>More</button>
+                </a>
+              </div>
 
             </div>
         </article>
     </div>
 
 </section>
-</body>
+
 
 <footer>
     <p>&copy;2018 Wild News</p>
 </footer>
 <script type="module" src="/js/app.js"></script>
 
-
+</body>
 
 </html>
 
