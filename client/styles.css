@@ -181,6 +181,50 @@ a.title-nav-bar {
   font-weight: 700;
 }
 
+/* -- COMMENTS SECTION -- */
+.add-comment {
+  background-color: #fff;
+  border: solid #e78914;
+  border-radius: 1rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  display: flex;
+}
+.comment-user {
+  width: 15%;
+  margin: 1rem 3rem 1rem 1rem;
+  text-align: center;
+}
+.comment-user .user-img {
+  margin: auto;
+  background-color: #faa944;
+  border-radius: 3rem;
+  width: 6rem;
+  height: 6rem;
+  margin-bottom: 1.5rem;
+}
+.comment-form {
+  width: 80%;
+  margin: 1rem 1rem 1rem 3rem;
+}
+#commentBtn {
+  margin-left: 2rem;
+  padding: 0 3.05rem;
+  background-color: #faa944;
+  border : none;
+  border-radius: 0.8rem;
+  line-height: 0rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+
+}
+#commentBtn:hover {
+  background-color: #e78914;
+  font-weight: 700;
+  padding: 0 3rem;
+}
+
 /* -- MODAL -- */
 /* Modal Button */
 .send-button {
