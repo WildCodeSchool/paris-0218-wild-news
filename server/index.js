@@ -79,7 +79,7 @@ app.get('/post/:id', (request, response) => {
 
 // ==============GET NAV BAR==============//
 // +++TEST TO SORT DATA ON SERVER SIDE++++/
-app.get('/navbar', (request, response) => {
+app.get('/navbar', (request, response, next) => {
   const navBarDir = path.join(__dirname, '../', 'mocks/category') // make the path: /Users/guillaume/Desktop/paris-0218-wild-news/mocks/category
   readdir(navBarDir) // read every files of mocks/category, so category1.json, category2.json and so on
     .then(files => {
@@ -97,10 +97,7 @@ app.get('/navbar', (request, response) => {
 
       response.json(arrTitle)
     })
-
-    .catch(err => {
-      response.status(500).end(err.message)
-    })
+    .catch(next)
 })
 
 // ==============POST NEW POST==============//
