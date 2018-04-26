@@ -10,3 +10,10 @@ const pendingConnection = mysql.createConnection({
   namedPlaceholders: true
 
 })
+
+const exec = async (query, params) => {
+  const connection = await pendingConnection
+  console.log('executing', query)
+  const result = await connection.execute(query, params)
+  return result[0]
+}
