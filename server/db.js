@@ -21,3 +21,4 @@ const exec = async (query, params) => {
 const createUser = params => exec(`
   INSERT INTO user (username, firstName, lastName, email, password)
   VALUES (:username, :firstName, :lastName, :email, :password)`, params)
+const readUser = () => exec(`SELECT * FROM user`)
