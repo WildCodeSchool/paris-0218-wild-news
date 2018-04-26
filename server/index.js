@@ -88,21 +88,21 @@ app.get('/navbar', (request, response) => {
         return readFile(filepath, 'utf8') // return the result in utf8
       })
 
-      Promise.all(allFiles) // Promise: wait for all the data to be ready (otherwise, we get an empty array)
-        .then(allFilesValues => {
-          const valuesInJason = allFilesValues.map(JSON.parse)
-          const arrTitle = []
-          for (let i = 0; i < valuesInJason.length; i++) { // replace by a .map if possible
-            if (valuesInJason[i].title !== null) {
-              arrTitle.push(valuesInJason[i].title)
-            }
-          }
-          response.json(arrTitle)
-        })
+      return Promise.all(allFiles) // Promise: wait for all the data to be ready (otherwise, we get an empty array)
+    })
+    .then(allFilesValues => {
+      const jsonValues = allFilesValues.map(JSON.parse)
+      const arrTitle = []
+      for (let i = 0; i < jsonValues.length; i++) { // replace by a .map if possible
+        if (jsonValues[i].title !== null) {
+          arrTitle.push(jsonValues[i].title)
+        }
+      }
+      response.json(arrTitle)
+    })
 
-        .catch(err => {
-          response.status(500).end(err.message)
-        })
+    .catch(err => {
+      response.status(500).end(err.message)
     })
 })
 
