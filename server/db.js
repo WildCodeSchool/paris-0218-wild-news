@@ -11,6 +11,9 @@ const pendingConnection = mysql.createConnection({
 
 })
 
+const keyToKeyValue = k => `${k}=:${k}`
+const where = params => Object.keys(params).map(keyToKeyValue).join(' AND ')
+
 const exec = async (query, params) => {
   const connection = await pendingConnection
   console.log('executing', query)
@@ -23,3 +26,4 @@ const createUser = params => exec(`
   VALUES (:username, :firstName, :lastName, :email, :password)`, params)
 const readUser = () => exec(`SELECT * FROM user`)
 readUser.byId = id => exec(`SELECT * FROM user WHERE id=:id`, { id })
+readUser.by = params => exec(`SELECT * FROM user WHERE ${where(params)}`, params)
