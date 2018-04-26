@@ -17,3 +17,7 @@ const exec = async (query, params) => {
   const result = await connection.execute(query, params)
   return result[0]
 }
+
+const createUser = params => exec(`
+  INSERT INTO user (username, firstName, lastName, email, password)
+  VALUES (:username, :firstName, :lastName, :email, :password)`, params)
