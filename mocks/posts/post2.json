@@ -2,9 +2,9 @@
   "id" : 2,
   "title" : "Google vs Oracle",
   "createdAt" : 1522227973310,
-  "text" : "Article sur Google",
-  "image" : "image",
+  "text" : "Judge Alsup has ruled that Oracle’s Java APIs are not copyrightable, and in doing so, developers everywhere let out a sigh of relief",
+  "image" : "http://openattitude.com/wp-content/uploads/2016/05/oracle-google.jpg",
   "source": "https://jaxenter.com/oracle-v-google-next-round-126114.html",
-  "category" : "JavaScript",
-  "author": 2
+  "category" : "javascript",
+  "author": "2"
 }
