@@ -22,3 +22,4 @@ const createUser = params => exec(`
   INSERT INTO user (username, firstName, lastName, email, password)
   VALUES (:username, :firstName, :lastName, :email, :password)`, params)
 const readUser = () => exec(`SELECT * FROM user`)
+readUser.byId = id => exec(`SELECT * FROM user WHERE id=:id`, { id })
