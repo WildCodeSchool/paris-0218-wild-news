@@ -16,7 +16,7 @@ const where = params => Object.keys(params).map(keyToKeyValue).join(' AND ')
 
 const exec = async (query, params) => {
   const connection = await pendingConnection
-  console.log('executing', query)
+  console.log('executing', query, params)
   const result = await connection.execute(query, params)
   return result[0]
 }
