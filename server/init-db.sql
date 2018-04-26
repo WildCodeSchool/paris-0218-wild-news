@@ -1,5 +1,8 @@
 DROP DATABASE IF EXISTS wildnews;
 CREATE DATABASE wildnews;
+CREATE USER IF NOT EXISTS 'server'@'localhost';
+GRANT ALL PRIVILEGES ON wildnews.* To 'server'@'localhost' IDENTIFIED BY 'mysql';
+
 USE wildnews;
 
 CREATE TABLE category (
@@ -7,20 +10,23 @@ CREATE TABLE category (
 	title VARCHAR(50),
 	description TEXT,
 	imageURL VARCHAR(2083),
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+	UNIQUE KEY (title)
+
 ) ENGINE=INNODB;
 
 CREATE TABLE user (
 	id INT NOT NULL AUTO_INCREMENT,
-	username VARCHAR(50),
-	firstName VARCHAR(50),
-	lastName VARCHAR(50),
-	email VARCHAR(50),
-	password VARCHAR(50),
+	username VARCHAR(50) NOT NULL,
+	firstName VARCHAR(50) NOT NULL,
+	lastName VARCHAR(50) NOT NULL,
+	email VARCHAR(50) NOT NULL,
+	password VARCHAR(50) NOT NULL,
 	imageURL VARCHAR(2083),
 	createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	deletedAt TIMESTAMP NULL,
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+	UNIQUE KEY (email, username)
 ) ENGINE=INNODB;
 
 CREATE TABLE post (
