@@ -91,13 +91,10 @@ app.get('/navbar', (request, response) => {
       return Promise.all(allFiles) // Promise: wait for all the data to be ready (otherwise, we get an empty array)
     })
     .then(allFilesValues => {
-      const jsonValues = allFilesValues.map(JSON.parse)
-      const arrTitle = []
-      for (let i = 0; i < jsonValues.length; i++) { // replace by a .map if possible
-        if (jsonValues[i].title !== null) {
-          arrTitle.push(jsonValues[i].title)
-        }
-      }
+      const arrTitle = allFilesValues
+        .map(JSON.parse)
+        .map(article => article.title)
+
       response.json(arrTitle)
     })
 
