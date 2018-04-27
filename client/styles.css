@@ -182,17 +182,36 @@ a.title-nav-bar {
 }
 
 /* -- COMMENTS SECTION -- */
+/*.comment-section{
+  background-color: #f7f0ea;
+}*/
+.add-comment-block {
+  width: 90%;
+  margin: 4rem auto 0;
+}
 .comment-block {
   width: 90%;
   margin: auto;
+  min-height: 200px;
 }
 .add-comment {
-  background-color: #fff;
-  border: solid #e78914;
+  background-color: #fcfcfc;
+  border: solid 0.2rem #e78914;
   border-radius: 1rem;
   margin: 2rem 0;
   padding: 2rem;
   display: flex;
+}
+.read-comment {
+  background-color: #fcfcfc;
+  border: solid 0.2rem #e78914;
+  border-radius: 1rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  display: block;
+}
+.read-comment p {
+  margin: 0;
 }
 .comment-user {
   width: 15%;
@@ -211,6 +230,14 @@ a.title-nav-bar {
   width: 80%;
   margin: 1rem 1rem 1rem 3rem;
 }
+.comment-form label {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.comment-form textarea {
+  background-color: #fff;
+  margin: 1rem 0 0;
+}
 #commentBtn {
   margin: 0;
   padding: 0 3.05rem;
@@ -227,6 +254,10 @@ a.title-nav-bar {
   background-color: #e78914;
   font-weight: 700;
   padding: 0 3rem;
+}
+.comment-text {
+  width: 80%;
+  margin: 1rem 1rem 1rem 3rem;
 }
 
 /* -- MODAL -- */
