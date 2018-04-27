@@ -226,6 +226,12 @@ a.title-nav-bar {
   height: 6rem;
   margin-bottom: 1.5rem;
 }
+.comment-reaction {
+  width: 100%;
+  margin: 1rem;
+  text-align: center;
+  display: flex;
+}
 .comment-form {
   width: 80%;
   margin: 1rem 1rem 1rem 3rem;
