@@ -182,6 +182,10 @@ a.title-nav-bar {
 }
 
 /* -- COMMENTS SECTION -- */
+.comment-block {
+  width: 90%;
+  margin: auto;
+}
 .add-comment {
   background-color: #fff;
   border: solid #e78914;
@@ -208,7 +212,7 @@ a.title-nav-bar {
   margin: 1rem 1rem 1rem 3rem;
 }
 #commentBtn {
-  margin-left: 2rem;
+  margin: 0;
   padding: 0 3.05rem;
   background-color: #faa944;
   border : none;
