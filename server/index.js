@@ -9,7 +9,7 @@ const readdir = util.promisify(fs.readdir)
 const writeFile = util.promisify(fs.writeFile)
 const pe = new PrettyError()
 const app = express()
-
+const db = require('./db.js')
 // ==============HEADER==============//
 app.use((request, response, next) => {
   response.header('Access-Control-Allow-Origin', '*')
@@ -124,22 +124,24 @@ app.post('/post', (request, response, next) => {
 
 // ==============POST NEW CATEGORY==============//
 app.post('/category', (request, response, next) => {
-  const id = Math.random().toString(36).slice(2).padEnd(11, '0')
-  const filename = `${id}.json`
-  const filepath = path.join(__dirname, '../mocks/category', filename)
-  const content = {
-    id: id,
-    title: request.body.title,
-    createdAt: Date.now(),
-    text: request.body.description,
-    image: request.body.image
-  }
-  writeFile(filepath, JSON.stringify(content), 'utf8')
+
+  db.category.createCat()
+  // const id = Math.random().toString(36).slice(2).padEnd(11, '0')
+  // const filename = `${id}.json`
+  // const filepath = path.join(__dirname, '../mocks/category', filename)
+  // const content = {
+  //   id: id,
+  //   title: request.body.title,
+  //   createdAt: Date.now(),
+  //   text: request.body.description,
+  //   image: request.body.image
+  // }
+  // writeFile(filepath, JSON.stringify(content), 'utf8')
     .then(() => response.json('OK'))
     .catch(next)
 })
 
-// ==============ERROR HANDLING==============//
+//==============ERROR HANDLING==============//
 app.use((error, request, response, next) => {
   if (error) {
     console.log(pe.render(error))

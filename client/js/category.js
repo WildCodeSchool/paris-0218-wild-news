@@ -33,14 +33,14 @@ document.getElementById('add-category').addEventListener('submit', event => { //
   // get values of form: title, description,...
   const title = document.getElementById('title-category').value
   const description = document.getElementById('description-category').value
-  const image = document.getElementById('img-category').value
+  const imageURL = document.getElementById('img-category').value
   // Fetch which post data of new category
   window.fetch('http://localhost:3000/category', {
     method: 'post',
     body: JSON.stringify({
       title,
       description,
-      image
+      imageURL
     })
   }).then(res => console.log(res.status))
 })
