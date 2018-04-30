@@ -36,7 +36,7 @@ CREATE TABLE post (
 	deletedAt TIMESTAMP NULL,
 	description TEXT,
 	imageURL VARCHAR(2083),
-	source TEXT,
+	sourceURL TEXT,
 	category INT NOT NULL,
 	author INT NOT NULL,
 	PRIMARY KEY (id),
