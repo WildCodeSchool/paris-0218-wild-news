@@ -2,13 +2,11 @@ const mysql = require('mysql2/promise')
 
 // connection database with a promise
 const pendingConnection = mysql.createConnection({
-
   user: 'server',
   host: 'localhost',
   database: 'wildnews',
   password: 'mysql',
   namedPlaceholders: true
-
 })
 
 const keyToKeyValue = k => `${k}=:${k}`
@@ -21,35 +19,22 @@ const exec = async (query, params) => {
   return result[0]
 }
 
-const createCat = params => exec(`
+exports.category = {}
+exports.category.create = params => exec(`
   INSERT INTO category (title, description, imageURL)
-  VALUES (:title, :description, :imageURL)`, params)
+  VALUES (:title, :description, :image)`, params)
 
-const readCat = () => exec(`SELECT * FROM category`)
-const readCatById = id => exec(`SELECT * FROM category WHERE id=:id`, { id })
-const updateCat = params => exec(`UPDATE category SET title=?, description=?, imageURL=? WHERE id=?`, [ params.title, params.description, params.imageURL, params.id ])
+exports.category.read = () => exec(`SELECT * FROM category`)
+exports.category.readById = id => exec(`SELECT * FROM category WHERE id=:id`, {id})
+exports.category.update = params => exec(`UPDATE category SET title=?, description=?, imageURL=? WHERE id=?`, [params.title, params.description, params.imageURL, params.id])
 
-const createUser = params => exec(`
+exports.user = {}
+exports.user.create = params => exec(`
   INSERT INTO user (username, firstName, lastName, email, password)
   VALUES (:username, :firstName, :lastName, :email, :password)`, params)
-const readUser = () => exec(`SELECT * FROM user`)
-const readUserById = id => exec(`SELECT * FROM user WHERE id=:id`, { id })
-const readUserby = params => exec(`SELECT * FROM user WHERE ${where(params)}`, params)
-
-module.exports = {
-  category: {
-    createCat: createCat,
-    readCat: readCat,
-    readCatById: readCatById,
-    updateCat: updateCat
-  },
-  user: {
-    create: createUser,
-    read: readUser,
-    readBy: readUserby,
-    readById: readUserById
-  }
-}
+exports.user.read = () => exec(`SELECT * FROM user`)
+exports.user.readById = id => exec(`SELECT * FROM user WHERE id=:id`, {id})
+exports.user.readBy = params => exec(`SELECT * FROM user WHERE ${where(params)}`, params)
 
 // createUser({username: 'ok', firstName: 'ok', lastName: 'okcom', email: 'ok', password: 'ok' })
 //   .then(result => console.log('result:', result))

@@ -124,31 +124,19 @@ app.post('/post', (request, response, next) => {
 
 // ==============POST NEW CATEGORY==============//
 app.post('/category', (request, response, next) => {
-
-  db.category.createCat()
-  // const id = Math.random().toString(36).slice(2).padEnd(11, '0')
-  // const filename = `${id}.json`
-  // const filepath = path.join(__dirname, '../mocks/category', filename)
-  // const content = {
-  //   id: id,
-  //   title: request.body.title,
-  //   createdAt: Date.now(),
-  //   text: request.body.description,
-  //   image: request.body.image
-  // }
-  // writeFile(filepath, JSON.stringify(content), 'utf8')
+  db.category.create(request.body)
     .then(() => response.json('OK'))
     .catch(next)
 })
 
-//==============ERROR HANDLING==============//
+// ==============ERROR HANDLING============== //
 app.use((error, request, response, next) => {
   if (error) {
     console.log(pe.render(error))
     if (error.code === 'ENOENT') {
-      return response.status(404).json({ message: error.message })
+      return response.status(404).json({message: error.message})
     }
-    return response.status(500).json({ message: error.message })
+    return response.status(500).json({message: error.message})
   }
   next()
 })
