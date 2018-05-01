@@ -3,19 +3,18 @@
 import '/js/common.js'
 import { createNewPost } from '/components/block-category.js'
 import { createNewTitle } from '/components/block-title-category.js'
+
 const params = new URLSearchParams(window.location.search) // get all params of the URL: name, id and a lot of other thing (do console.log to see)
-const name = params.get('name') // get only the param name of URL (in our case the category name)
+const categoryName = params.get('name') // get only the param name of URL (in our case the category name)
 
 // =========FETCH OF CATEGORY BY NAME==============//
-window.fetch(`${config.serverHost}/category/${name}`)
+window.fetch(`${config.serverHost}/category/${categoryName}`)
   .then(response => response.json())
-  .then(posts => { // get all posts of mock
+  .then(category => { // get all posts of mock
     const postsElementTips = document.getElementById('posts-tips')
     const titleCategory = document.getElementById('category-title')
-    const postsCategory1 = posts.filter(post => post.category === `${name}`) // filter posts by category (we only keep the ones of the category in the URL)
-    const postElementTips = postsCategory1.map(createNewPost).join('') // apply function of component to every post
-    titleCategory.innerHTML = createNewTitle(`${name}`) // insert title of category in HTML
-    postsElementTips.innerHTML = postElementTips // insert posts HTML
+    titleCategory.innerHTML = createNewTitle(category)
+    postsElementTips.innerHTML = category.posts.map(createNewPost).join('') // apply function of component to every post
   })
 
 // =========OPEN FORM POST LINK==============//
@@ -49,6 +48,7 @@ document.getElementById('add-link').addEventListener('submit', event => {
   const link = document.getElementById('link-article').value
   // const category = document.getElementById('category-article').values
   const author = document.getElementById('author-article').value
+  const categoryId = document.getElementsByClassName('cat-title')[0].getAttribute('data-id')
 
   // Fetch which post data of new link in mock
   window.fetch(`${config.serverHost}/post`, {
@@ -58,8 +58,12 @@ document.getElementById('add-link').addEventListener('submit', event => {
       description,
       image,
       link,
-      category: `${name}`,
+      category: `${categoryId}`,
       author
     })
-  }).then(res => console.log(res.status))
+  }).then(res => {
+    if (res.status === 200) {
+      window.parent.location.reload()
+    }
+  })
 })

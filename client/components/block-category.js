@@ -1,12 +1,12 @@
 export
-const createNewPost = (myPost) =>
+const createNewPost = (post) =>
   `
   <div class="row article-caption">
-    <a href="/post.html?id=${myPost.id}" class="article-link">
-      <div id="image" class="column column-25"><img src="${myPost.image}" alt="${myPost.title}" class="article-img"></div>
+    <a href="/post.html?id=${post.id}" class="article-link">
+      <div id="image" class="column column-25"><img src="${post.imageURL}" alt="${post.title}" class="article-img"></div>
       <div class="column column-75">
-        <h4 id="posts">${myPost.title}</h4>
-        <p id="description">${myPost.text}</p>
+        <h4 id="posts">${post.title}</h4>
+        <p id="description">${post.description}</p>
       </div>
     </a>
   </div>

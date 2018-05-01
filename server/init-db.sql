@@ -38,12 +38,10 @@ CREATE TABLE post (
 	imageURL VARCHAR(2083),
 	sourceURL TEXT,
 	category INT NOT NULL,
-	author INT NOT NULL,
+	author VARCHAR(100) NOT NULL,
 	PRIMARY KEY (id),
 	FOREIGN KEY (category)		
-		REFERENCES category(id),
-	FOREIGN KEY (author)
-		REFERENCES user(id)
+		REFERENCES category(id)
 ) ENGINE=INNODB;
 
 CREATE TABLE comment (

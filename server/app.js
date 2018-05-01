@@ -1,12 +1,6 @@
 // ==============MODULES==============//
 const express = require('express')
-const fs = require('fs')
-const path = require('path')
 const PrettyError = require('pretty-error')
-const util = require('util')// Filesystem
-const readFile = util.promisify(fs.readFile)// Util. for path
-const readdir = util.promisify(fs.readdir)
-const writeFile = util.promisify(fs.writeFile)
 const pe = new PrettyError()
 const app = express()
 const db = require('./db.js')
@@ -42,83 +36,53 @@ app.get('/', (request, response) => {
 })
 
 // ==============GET ALL POSTS==============//
-app.get('/post', (request, response) => {
-  db.getPosts()
+app.get('/posts', (request, response, next) => {
+  db.post.readAll()
     .then(posts => response.json(posts))
-// const postsDir = path.join(__dirname, '../', 'mocks/posts') // make the beginning of the path: add / and join everything
-// readdir(postsDir) // get every element of the files but only the names (in our case: post1.json)
-//   .then(files => Promise.all(files
-//     .map(file => path.join(postsDir, file)) // get the complete path by joining postsDir and file
-//     .map(filepath => readFile(filepath, 'utf8'))))
-//
-//   .then(allFilesValues => response.json(allFilesValues.map(JSON.parse)))
-//   .catch(next)
+    .catch(next)
 })
 // ==============GET CATEGORY BY ID==============//
 app.get('/category/:title', (request, response, next) => {
   db.category.readBy(request.params)
-    .then(category => response.json(category))
+    .then(categories => {
+      let category = categories[0]
+      db.post.readBy({category: category.id})
+        .then(posts => {
+          category.posts = posts
+          response.json(category)
+        })
+        .catch(next)
+    })
     .catch(next)
 })
 
 // =============GET POST BY ID==============//
 app.get('/post/:id', async (request, response, next) => {
   try {
-    const post = await db.readPostby(request.params.id)
-    response.json(post)
+    const post = await db.post.readBy(request.params)
+    response.json(post[0])
   } catch (err) {
     next(err)
   }
 })
-// const fileName = `post${request.params.id}.json` // !!!!!!!! For post add with the form we will have to remove the 'post' otherwise the path will not be good
-//   const filepath = path.join(__dirname, '../', 'mocks/posts', fileName)
-//   const filepath = path.join(__dirname, '../', 'mocks/posts', fileName)
-//   readFile(filepath)
-//     .then(data => {
-//       response.header('Content-Type', 'application/json; charset=utf-8')
-//       response.end(data)
-//     })
-//     .catch(next)
-//     .catch(next)
-//     .catch(next)
+
 // ==============GET NAV BAR==============//
 // +++TEST TO SORT DATA ON SERVER SIDE++++/
 app.get('/categories', (request, response, next) => {
-  db.category.read()
+  db.category.readAll()
     .then(categories => response.json(categories))
     .catch(next)
 })
 
 // ==============POST NEW POST==============//
 app.post('/post', (request, response, next) => {
-  db.createPost({
-    id: 1,
-    createdAt: Date.now(),
-    title: request.body.title,
-    description: request.body.description,
-    imageURL: request.body.imageURL,
-    sourceURL: request.body.sourceURL,
-    category: request.body.category,
-    author: request.body.author
-  })
+  let content = request.body
+  content.createdAt = (new Date()).toISOString().substring(0, 10)
+  console.log(content)
+  db.post.create(content)
     .then(() => response.json('OK'))
     .catch(next)
 })
-// console.log('ok')
-// const id = Math.random().toString(36).slice(2).padEnd(11, '0')
-// const filename = `${id}.json`
-// const filepath = path.join(__dirname, '../mocks/posts', filename)
-// const content = {
-//   id: id,
-//   title: request.body.title,
-//   createdAt: Date.now(),
-//   text: request.body.description,
-//   image: request.body.image,
-//   source: request.body.link,
-//   category: request.body.category,
-//   author: request.body.author
-// }
-// writeFile(filepath, JSON.stringify(content), 'utf8')
 
 // ==============POST NEW CATEGORY==============//
 app.post('/category', (request, response, next) => {

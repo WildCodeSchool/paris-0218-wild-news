@@ -4,7 +4,7 @@ import '/js/common.js'
 import { createNewPost } from '/components/block-article-index.js'
 
 // =========FETCH OF ALL POSTS============== //
-window.fetch(`${config.serverHost}/post`)
+window.fetch(`${config.serverHost}/posts`)
   .then(response => response.json())
   .then(posts => { // get all posts
     const postsElementTips = document.getElementById('posts-tips')

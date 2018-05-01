@@ -10,6 +10,6 @@ const id = params.get('id')
 window.fetch(`${config.serverHost}/post/${id}`) // get post id
   .then(response => response.json())
   .then(post => {
-    const postSeul = document.getElementById('post-alone')
-    postSeul.innerHTML = createNewPost(post)
+    const postBlock = document.getElementById('post-alone')
+    postBlock.innerHTML = createNewPost(post)
   })
