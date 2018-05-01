@@ -1,13 +1,14 @@
 /* global URLSearchParams */
 
 // =========IMPORT COMPONENTS==============//
+import { config } from '/parameters.js'
 import { createNewPost } from '/components/block-article-alone.js'
 import { createNavBar } from '/components/nav-bar.js'
 const params = new URLSearchParams(window.location.search)
 const id = params.get('id')
 
 // =========FETCH POST BY ID============//
-window.fetch(`http://localhost:3000/post/${id}`) // get post id
+window.fetch(`${config.serverHost}/post/${id}`) // get post id
   .then(response => response.json())
   .then(post => {
     const postSeul = document.getElementById('post-alone')
@@ -22,7 +23,7 @@ document.getElementById('add-category').addEventListener('submit', event => { //
   const description = document.getElementById('description-category').value
   const image = document.getElementById('img-category').value
   // Fetch which post data of the new category
-  window.fetch('http://localhost:3000/category', {
+  window.fetch(`${config.serverHost}/category`, {
     method: 'post',
     body: JSON.stringify({
       title,
@@ -33,7 +34,7 @@ document.getElementById('add-category').addEventListener('submit', event => { //
 })
 
 // =========ADD NAVBAR DYNAMIC==============//
-window.fetch('http://localhost:3000/navbar')
+window.fetch(`${config.serverHost}/navbar`)
   .then(response => response.json())
   .then(categories => { // get array of categories title (see index.js)
     const categoriesList = document.getElementById('navbar')
