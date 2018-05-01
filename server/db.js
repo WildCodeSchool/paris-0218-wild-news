@@ -19,28 +19,24 @@ const exec = async (query, params) => {
   return result[0]
 }
 
-// const createUser = params => exec(`
-//   INSERT INTO user (username, firstName, lastName, email, password)
-//   VALUES (:username, :firstName, :lastName, :email, :password)`, params)
-// const readUser = () => exec(`SELECT * FROM user`)
-// const readUserById = id => exec(`SELECT * FROM user WHERE id=:id`, { id })
-// const readUserby = params => exec(`SELECT * FROM user WHERE ${where(params)}`, params)
-//
-// module.exports = {
-//   user: {
-//     create: createUser,
-//     read: readUser,
-//     readBy: readUserby,
-//     readById: readUserById
-//   }
-// }
+exports.category = {}
+exports.category.create = params => exec(`
+  INSERT INTO category (title, description, imageURL)
+  VALUES (:title, :description, :image)`, params)
 
-// les posts en SQL
+exports.category.read = () => exec(`SELECT * FROM category`)
+exports.category.readById = id => exec(`SELECT * FROM category WHERE id=:id`, {id})
+exports.category.readBy = params => exec(`SELECT * FROM category WHERE ${where(params)}`, params)
+exports.category.update = params => exec(`UPDATE category SET title=?, description=?, imageURL=? WHERE id=?`, [params.title, params.description, params.imageURL, params.id])
 
-// const getLastestPosts = (limit) => exec('SELECgetLastestPosts(3)
-// //   .then(result => console.log('result:', result))
-// //   .catch(console.error)T * FROM post ORDER BY createdAt DESC LIMIT ?', [limit]) // à utiliser pour le carousel et les onglets de cat dans home
-//
+exports.user = {}
+exports.user.create = params => exec(`
+  INSERT INTO user (username, firstName, lastName, email, password)
+  VALUES (:username, :firstName, :lastName, :email, :password)`, params)
+exports.user.read = () => exec(`SELECT * FROM user`)
+exports.user.readById = id => exec(`SELECT * FROM user WHERE id=:id`, {id})
+exports.user.readBy = params => exec(`SELECT * FROM user WHERE ${where(params)}`, params)
+
 
 const createPost = params => exec(`
   INSERT INTO post (title, description, imageURL, sourceURL)
@@ -52,19 +48,14 @@ const readPostById = async id => {
 }
 const readPostby = params => exec(`SELECT * FROM post WHERE ${where(params)}`, params)
 
-// createPost({title: 'youpi', description: "c'est cool", imageURL: 'https://cdn-images-1.medium.com/max/800/1*XlRCFF0t8Jkj1EKPt-0Pmw.png', sourceURL: 'https://uxplanet.org/mobile-ui-design-trends-in-2018-ccd26031dfd8'})
+// createUser({username: 'ok', firstName: 'ok', lastName: 'okcom', email: 'ok', password: 'ok' })
 //   .then(result => console.log('result:', result))
 //   .catch(console.error)
 
-getPosts()
-  .then(todos => console.log('todos:', todos))
+// updateCat({id: '1', title: 'modifok', description: 'okcom', imageURL: 'ok' })
+//   .then(result => console.log('result:', result))
+//   .catch(console.error)
 
-module.exports = {
-  createPost,
-  readPostby,
-  readPostById
-}
-
-module.exports = {
-  getPosts
-}
+// readCat()
+//   .then(result => console.log(result))
+//   .catch(console.error)

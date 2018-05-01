@@ -13,71 +13,7 @@
 <body>
 
 <header>
-  <!-- headbar -->
-  <div class="headbar">
-    <ul>
-      <li id="logo">
-        <a href="http://localhost:5000/">
-        <img src="assets/logo_orange.png" alt="logo">
-        </a>
-      </li>
-      <li>
-        <h1>Wild News</h1>
-      </li>
-      <li class="user">
-        <div>
-          <div class="user-img"></div>
-          <a href="">Log in - Sign in</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-    <!-- navbar -->
-  <nav class="navbar">
-    <ul>
-      <li>
-        <a href="http://localhost:5000/">Home</a>
-      </li>
 
-      <!-- INSERT CATEGORIES -->
-      <div id="navbar">             
-      </div>
-
-      <li class="add" id="btn-category">
-        Add
-        <div id="my-modal-cat" class="modal">
-        <!-- Modal content -->
-          <div class="modal-content">
-            <div class="modal-header">
-              <span class="close-cat">&times;</span>
-              <h2>Create a new category</h2>
-            </div>
-            <div class="modal-body">
-              <form id="add-category">
-                <label>
-                  Title:
-                  <input type="text" id="title-category" name="title category">
-                </label>
-                <label>
-                  Description:
-                  <textarea type="text"  id="description-category" name="description-category"></textarea>
-                </label>
-                <label>
-                  Image of category:
-                  <input type="text" id="img-category" name="image-category">
-                </label>
-                
-                <button type="submit" value="Create my category" onclick="window.parent.location.reload();window.close()">
-                  Create my category...
-                </button>
-              </form>
-
-            </div>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </nav>
 </header>
 
 <section class="container">
@@ -91,27 +27,27 @@
 
 
 <section class="container">
-    
+
     <!-- Block category 1 -->
     <div class="row">
         <article class="column column-100">
             <div class="cat-left">
-                
+
                 <h2 class="cat-title">Tips</h2>
-                
+
                 <div class="article container">
 
                     <div id="posts-tips">
                     </div>
-  
+
                 </div>
 
                 <div class="cat-button">
-                    <a href="http://localhost:5000/category.html?name=tips">
+                    <a href="category.html?name=tips">
                     <button>More</button>
                     </a>
                 </div>
-            </div>   
+            </div>
         </article>
 
     <!-- Block category 2 -->
@@ -124,7 +60,7 @@
               </div>
 
               <div class="cat-button">
-                <a href="http://localhost:5000/category.html?name=javascript">
+                <a href="category.html?name=javascript">
                 <button>More</button>
                 </a>
               </div>
@@ -139,7 +75,7 @@
 <footer>
     <p>&copy;2018 Wild News</p>
 </footer>
-<script type="module" src="/js/app.js"></script>
+<script type="module" src="/js/index.js"></script>
 
 </body>
 

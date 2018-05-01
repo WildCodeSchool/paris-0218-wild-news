@@ -7,12 +7,12 @@ USE wildnews;
 
 CREATE TABLE category (
 	id INT NOT NULL AUTO_INCREMENT,
-	title VARCHAR(50),
-	description TEXT,
-	imageURL VARCHAR(2083),
+	title VARCHAR(50) NOT NULL,
+	description TEXT NOT NULL,
+	imageURL VARCHAR(2083) NOT NULL,
+	createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (id),
 	UNIQUE KEY (title)
-
 ) ENGINE=INNODB;
 
 CREATE TABLE user (

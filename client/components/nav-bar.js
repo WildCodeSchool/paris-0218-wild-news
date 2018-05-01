@@ -2,6 +2,6 @@ export
 const createNavBar = (myCategory) =>
   `
   <li>
-    <a href="http://localhost:5000/category.html?name=${myCategory}" class="title-nav-bar">${myCategory}</a>
+    <a href="category.html?name=${myCategory.title}" class="title-nav-bar">${myCategory.title}</a>
   </li>
   `
