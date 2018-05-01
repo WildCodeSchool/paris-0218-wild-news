@@ -74,24 +74,9 @@ app.get('/post/:id', (request, response, next) => {
 
 // ==============GET NAV BAR==============//
 // +++TEST TO SORT DATA ON SERVER SIDE++++/
-app.get('/navbar', (request, response, next) => {
-  const navBarDir = path.join(__dirname, '../', 'mocks/category') // make the path: /Users/guillaume/Desktop/paris-0218-wild-news/mocks/category
-  readdir(navBarDir) // read every files of mocks/category, so category1.json, category2.json and so on
-    .then(files => {
-      const filepaths = files.map(file => path.join(navBarDir, file)) // for every file join navBarDir and the file name => /Users/guillaume/Desktop/paris-0218-wild-news/mocks/category/ + category1.json
-      const allFiles = filepaths.map(filepath => {
-        return readFile(filepath, 'utf8') // return the result in utf8
-      })
-
-      return Promise.all(allFiles) // Promise: wait for all the data to be ready (otherwise, we get an empty array)
-    })
-    .then(allFilesValues => {
-      const arrTitle = allFilesValues
-        .map(JSON.parse)
-        .map(article => article.title)
-
-      response.json(arrTitle)
-    })
+app.get('/categories', (request, response, next) => {
+  db.category.read()
+    .then(categories => response.json(categories))
     .catch(next)
 })
 

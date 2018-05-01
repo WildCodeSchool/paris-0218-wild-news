@@ -5,7 +5,7 @@ import { createNavBar } from '/components/nav-bar.js'
 window.config = config
 
 // =========ADD NAVBAR DYNAMIC==============//
-window.fetch(`${config.serverHost}/navbar`)
+window.fetch(`${config.serverHost}/categories`)
   .then(response => response.json())
   .then(categories => { // get array of categories title (sort on server side in app.js)
     const categoriesList = document.getElementById('navbar')
