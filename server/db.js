@@ -26,6 +26,7 @@ exports.category.create = params => exec(`
 
 exports.category.read = () => exec(`SELECT * FROM category`)
 exports.category.readById = id => exec(`SELECT * FROM category WHERE id=:id`, {id})
+exports.category.readBy = params => exec(`SELECT * FROM category WHERE ${where(params)}`, params)
 exports.category.update = params => exec(`UPDATE category SET title=?, description=?, imageURL=? WHERE id=?`, [params.title, params.description, params.imageURL, params.id])
 
 exports.user = {}

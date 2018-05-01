@@ -53,14 +53,9 @@ app.get('/post', (request, response, next) => {
 })
 
 // ==============GET CATEGORY BY ID==============//
-app.get('/category/:name', (request, response, next) => {
-  const postsDir = path.join(__dirname, '../', 'mocks/posts') // make the beginning of the path: add / and join everything
-  readdir(postsDir) // get every element of the files but only the names (in our case: post1.json)
-    .then(files => Promise.all(files // take array of promise and convert it array of values
-      .map(file => path.join(postsDir, file))
-      .map(filepath => readFile(filepath, 'utf8'))))
-
-    .then(allFilesValues => response.json(allFilesValues.map(JSON.parse)))
+app.get('/category/:title', (request, response, next) => {
+  db.category.readBy(request.params)
+    .then(category => response.json(category))
     .catch(next)
 })
 
