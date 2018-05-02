@@ -21,6 +21,11 @@ const exec = async (query, params) => {
   return result[0]
 }
 
+// create comment
+const createComment = params => exec(`
+  INSERT INTO comment (author, content)
+  VALUES (:author, :content)`, params)
+
 const createUser = params => exec(`
   INSERT INTO user (username, firstName, lastName, email, password)
   VALUES (:username, :firstName, :lastName, :email, :password)`, params)
