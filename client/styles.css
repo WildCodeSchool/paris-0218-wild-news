@@ -122,7 +122,22 @@ input[type=text]:focus, input[type=password]:focus {
   outline: none;
 }
 
-/* Set a style for all buttons */
+#connect{
+  display: inline;
+  padding: 1px 20px;
+  margin: 8px 0 8px 0;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.9;
+}
+
+#connect button{
+  background-color: transparent;
+  color: black;
+  border: none;
+}
+
+/* Set a style for cancel buttons */
 .clearfix button {
   text-align: center;
   background-color: #4CAF50;
@@ -225,21 +240,25 @@ header {
   float: left;
   margin-left: 100px;
 }
+
 .user {
   float: right;
   margin: 0 0 0 2rem;
+
 }
+
 .user-img {
   margin: auto;
-  background-color: #faa944;
-  border-radius: 3rem;
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
+ 
 }
+
 .user a {
   margin: 0;
   font-size: 1.4rem;
 }
+
 .headbar h1 {
   margin: 0;
   line-height: 1.6;
