@@ -78,6 +78,13 @@ app.get('/post/:id', (request, response, next) => {
     .catch(next)
 })
 
+// =============GET COMMENT==============//
+app.get('/comment', (request, response, next) => {
+  db.readComment(request)
+    .then(comment => response.json(comment))
+    .catch(next)
+})
+
 // ==============GET NAV BAR==============//
 // +++TEST TO SORT DATA ON SERVER SIDE++++/
 app.get('/navbar', (request, response, next) => {

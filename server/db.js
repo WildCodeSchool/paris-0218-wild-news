@@ -26,6 +26,13 @@ const createComment = params => exec(`
   INSERT INTO comment (author, content)
   VALUES (:author, :content)`, params)
 
+// select comments from database
+const readComment = () => exec(`SELECT * FROM comment ORDER BY createdAt DESC`)
+
+readComment()
+  .then(comment => console.log('comment:', comment))
+  .catch(console.error)
+
 const createUser = params => exec(`
   INSERT INTO user (username, firstName, lastName, email, password)
   VALUES (:username, :firstName, :lastName, :email, :password)`, params)
@@ -35,6 +42,7 @@ const readUserby = params => exec(`SELECT * FROM user WHERE ${where(params)}`, p
 
 module.exports = {
   createComment,
+  readComment,
   user: {
     create: createUser,
     read: readUser,
