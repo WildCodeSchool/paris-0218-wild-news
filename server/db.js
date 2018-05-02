@@ -34,6 +34,7 @@ const readUserById = id => exec(`SELECT * FROM user WHERE id=:id`, { id })
 const readUserby = params => exec(`SELECT * FROM user WHERE ${where(params)}`, params)
 
 module.exports = {
+  createComment,
   user: {
     create: createUser,
     read: readUser,

@@ -9,6 +9,7 @@ const readdir = util.promisify(fs.readdir)
 const writeFile = util.promisify(fs.writeFile)
 const pe = new PrettyError()
 const app = express()
+const db = require('./db')
 
 // ==============HEADER==============//
 app.use((request, response, next) => {
@@ -136,6 +137,16 @@ app.post('/category', (request, response, next) => {
   }
   writeFile(filepath, JSON.stringify(content), 'utf8')
     .then(() => response.json('OK'))
+    .catch(next)
+})
+
+// ==============POST NEW COMMENT==============//
+app.post('/comment', (request, response, next) => {
+  db.createComment({
+    author: request.body.author,
+    content: request.body.content
+  })
+    .then(() => response.json('ok'))
     .catch(next)
 })
 
