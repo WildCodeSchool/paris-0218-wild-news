@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+  <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 </head>
 
 <body>
@@ -29,6 +30,75 @@
           </div>
         </div>
 
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- COMMENTS SECTION -->
+<section class="container comment-section">
+
+  <!-- ADD COMMENT -->
+  <div class="row">
+    <article class="add-comment-block">
+      <div class="add-comment">
+        <div class="comment-user">
+          <div class="user-img"></div>
+          <h6>User Name</h6>
+        </div>
+        <form id="add-comment" class="comment-form">
+          <label>
+            user id :
+            <input type="text" id="author-comment" name="author-comment">
+          </label>
+          <label>
+            Write your comment :
+            <textarea type="text"  id="content-comment" name="content-comment"></textarea>
+          </label>
+          <button type="submit" id="commentBtn">Post</button>
+        </form>
+      </div>
+    </article>
+  </div>
+
+  <!-- INSERT COMMENTS -->
+  <div id="comment-content">
+    
+  </div>
+
+  <!-- UNDER COMMENTS -->
+  <div class="row">
+    <article class="comment-block-read">
+      <div class="read-comment">
+        <div class="row">
+          <div class="comment-user">
+            <div class="user-img"></div>
+            <h6>User Name</h6>
+          </div>
+          <div class="comment-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="comment-reaction">
+            <div>
+              <i class="fas fa-star fa-2x"></i>
+              <p>84</p>
+            </div>
+            <div>
+              <i class="fas fa-comments fa-2x"></i>
+              <p>Comment</p>
+            </div>
+            <div>
+              <i class="fas fa-paper-plane fa-2x"></i>
+              <p>Message</p>
+            </div>
+            <div>
+              <i class="fas fa-exclamation-circle fa-2x"></i>
+              <p>Report</p>
+            </div>
+          </div>
+        </div>
       </div>
     </article>
   </div>
