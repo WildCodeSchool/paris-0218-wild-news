@@ -1,7 +1,9 @@
 /* global URLSearchParams */
 // =========IMPORT COMPONENTS==============//
 import { createNewComment } from '/components/block-comment.js'
+//import { createNavBar } from '/components/nav-bar.js'
 const params = new URLSearchParams(window.location.search)
+//const id = params.get('id')
 
 // =========FETCH COMMENT============//
 window.fetch(`http://localhost:3000/comment`)
@@ -10,7 +12,7 @@ window.fetch(`http://localhost:3000/comment`)
     const postComment = document.getElementById('comment-content')
     const readComment = comment.map(createNewComment).join('')
     postComment.innerHTML = readComment
-    console.log(postComment)
+    console.log(readComment)
   })
 
   // =========ADD COMMENT============//
