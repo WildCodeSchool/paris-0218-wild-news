@@ -50,13 +50,9 @@ CREATE TABLE comment (
 	createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	deletedAt TIMESTAMP NULL,
 	content TEXT,
-	parent INT,
 	post INT NOT NULL,
 	FOREIGN KEY (post)
-		REFERENCES post(id),
-	FOREIGN KEY (parent)
-		REFERENCES comment(id),
-	PRIMARY KEY (id)
+		REFERENCES post(id)
 ) ENGINE=INNODB;
 
 CREATE TABLE favposts (

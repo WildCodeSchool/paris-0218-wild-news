@@ -60,36 +60,29 @@ app.get('/category/:title', (request, response, next) => {
 app.get('/post/:id', (request, response, next) => {
   db.post.readBy(request.params)
     .then(posts => {
-      // let post = posts[0]
-      db.comment.readBy({posts: posts[0].id})
-      console.log(posts)
+      let post = posts[0]
+      db.comment.readBy({post: post.id})
         .then(comments => {
-          posts.comments = comments
-          response.json(posts)
+          post.comments = comments
+          response.json(post)
         })
         .catch(next)
     })
     .catch(next)
 })
-//   try {
-//     const post = await db.post.readBy(request.params)
-//     response.json(post[0])
-//   } catch (err) {
-//     next(err)
-//   }
+
+// =============GET COMMENTS==============//
+app.get('/post/:post/comments', (request, response, next) => {
+  db.comment.readBy(request.params)
+    .then(comments => response.json(comments))
+    .catch(next)
+})
 
 // ==============GET NAV BAR==============//
 // +++TEST TO SORT DATA ON SERVER SIDE++++/
 app.get('/categories', (request, response, next) => {
   db.category.readAll()
     .then(categories => response.json(categories))
-    .catch(next)
-})
-
-// =============GET COMMENT==============//
-app.get('/comment', (request, response, next) => {
-  db.comment.readAll()
-    .then(comments => response.json(comments))
     .catch(next)
 })
 
@@ -112,11 +105,11 @@ app.post('/category', (request, response, next) => {
 
 // ==============POST NEW COMMENT==============//
 app.post('/comment', (request, response, next) => {
-  db.comment.create({
-    author: request.body.author,
-    content: request.body.content
-  })
-    .then(() => response.json('ok'))
+  let content = request.body
+  content.createdAt = (new Date()).toISOString().substring(0, 10)
+  console.log(content)
+  db.comment.create(content)
+    .then(() => response.json('OK'))
     .catch(next)
 })
 

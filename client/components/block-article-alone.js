@@ -1,5 +1,4 @@
-export
-const createNewPost = (post) =>
+export const createNewPost = (post) =>
   `
   <div class="article-caption row">
     <a href="${post.sourceURL}" target="_blank">
