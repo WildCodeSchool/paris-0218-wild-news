@@ -6,6 +6,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    overflow-x: hidden;
 }
 
 header {
@@ -66,13 +67,12 @@ header {
 }
 
 nav {
-
     top: 0;
     left: 0;
     width: 100%;
     height: 70px;
     background: rgba(0, 0, 0, 0.6);
-    padding: 0 0px;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -101,7 +101,7 @@ nav {
 }
 
 .headbar li a:hover {
-    color: #faa944;
+    color: #8E262B;
 }
 
 /* Navbar */
@@ -124,7 +124,7 @@ nav {
 }
 
 /*.navbar li:hover {
-  background-color: #e78914;
+  background-color: #8E262B;
 }*/
 .add {
     float: right;
@@ -211,7 +211,7 @@ a.title-nav-bar {
 }
 
 .sidebar .menu li a:hover {
-    background: orange;
+    background: #8E262B;
     color: #fff;
 
 }
@@ -303,7 +303,7 @@ a.title-nav-bar {
 
 .cat-right {
     background-color: #fff;
-    border: solid #e78914;
+    border: solid #8E262B;
     border-radius: 1rem;
     margin: 2rem 0;
     padding: 2rem;
@@ -311,7 +311,7 @@ a.title-nav-bar {
 
 .article-caption {
     margin: 1rem 0 1.8rem;
-    border-bottom: solid 0.1rem #e78914;
+    border-bottom: solid 0.1rem #8E262B;
 }
 
 .article-caption h4 {
@@ -339,7 +339,7 @@ a.title-nav-bar {
 }
 
 .cat-button button {
-    background-color: #faa944;
+    background-color: #8E262B;
     border: none;
     border-radius: 0.8rem;
     line-height: 0rem;
@@ -348,7 +348,7 @@ a.title-nav-bar {
 }
 
 .cat-button button:hover {
-    background-color: #e78914;
+    background-color: #8E262B;
     border-radius: 0.8rem;
     line-height: 0rem;
     font-size: 1.2rem;
@@ -672,7 +672,7 @@ hr {
 
 .add-comment {
     background-color: #fcfcfc;
-    border: solid 0.2rem #e78914;
+    border: solid 0.2rem #8E262B;
     border-radius: 1rem;
     margin: 2rem 0;
     padding: 2rem;
@@ -681,7 +681,7 @@ hr {
 
 .read-comment {
     background-color: #fcfcfc;
-    border: solid 0.2rem #e78914;
+    border: solid 0.2rem #8E262B;
     border-radius: 1rem;
     margin: 2rem 0;
     padding: 2rem;
@@ -700,7 +700,7 @@ hr {
 
 .comment-user .user-img {
     margin: auto;
-    background-color: #faa944;
+    background-color: #8E262B;
     border-radius: 3rem;
     width: 6rem;
     height: 6rem;
@@ -732,7 +732,7 @@ hr {
 #commentBtn {
     margin: 0;
     padding: 0 3.05rem;
-    background-color: #faa944;
+    background-color: #8E262B;
     border: none;
     border-radius: 0.8rem;
     line-height: 0rem;
@@ -743,7 +743,7 @@ hr {
 }
 
 #commentBtn:hover {
-    background-color: #e78914;
+    background-color: #8E262B;
     font-weight: 700;
     padding: 0 3rem;
 }
@@ -777,7 +777,7 @@ hr {
 #myBtn {
     margin-left: 2rem;
     padding: 0 3.15rem;
-    background-color: #faa944;
+    background-color: #8E262B;
     border: none;
     border-radius: 0.8rem;
     line-height: 0rem;
@@ -788,7 +788,7 @@ hr {
 }
 
 #myBtn:hover {
-    background-color: #e78914;
+    background-color: #8E262B;
     font-weight: 700;
     padding: 0 3rem;
 }
@@ -811,7 +811,7 @@ hr {
 }
 
 #add-link button, #add-category button {
-    background-color: #faa944;
+    background-color: #8E262B;
     color: white;
     font-weight: bold;
     border: none;
@@ -821,7 +821,7 @@ hr {
 }
 
 #add-link button:hover, #add-category button:hover {
-    background-color: #e78914;
+    background-color: #8E262B;
 }
 
 /* The Modal (background) */
@@ -945,10 +945,13 @@ hr {
 /* -- FOOTER -- */
 
 footer {
-    background-color: #E2A43F;
-    min-width: 10%;
-    margin: 2rem 0 0;
+    background-color: #290000;
+    min-width: 100%;
+    text-align: center;
+    margin: auto;
     padding: 1rem;
+    bottom: 0;
+    position: fixed;
 }
 
 footer p {
@@ -1101,11 +1104,15 @@ footer p {
     75%, 95% {
         left: -300%
     }
-
 }
 
 #my-btn-link {
-
     top: 0;
+    background-color: #8E262B;
+    border: none;
+    margin-bottom: 40px;
 }
 
+.close-link {
+    cursor: pointer;
+}
