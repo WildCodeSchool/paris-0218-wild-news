@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Wild News</title>
+ 
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
@@ -26,7 +27,6 @@
 </head>
 
 <body>
-
 
 <header>
   <!-- headbar -->
@@ -65,7 +65,7 @@
           <a href="#"><img src="assets/user.png"></a>
           <ul class="menu"> 
                
-              <li><a href="profil.html"><i class="far fa-user"></i></br>My Profil</a></li> 
+              <li><a href="#"><i class="far fa-user"></i></br>My Profil</a></li> 
               <li><a href="#"><i class="fas fa-chart-line"></i></br>Most Populars</a></li> 
               <li><a href="#"><i class="far fa-newspaper"></i></br>Recent Posts</a></li> 
               <li id="btn-category">
@@ -129,33 +129,96 @@
 </header>
 
 
-
-
-
-
-
 <section class="container">
-  <div class="row">
-    <article class="column column-100">
-      <div class="cat-left">
-        
-        <!-- INSERT BLOCKS OF CATEGORIES -->
-        <div class="article container">
-          <!-- INSERT POSTS -->
-          <div id="post-alone">
-          </div>
-        </div>
+    <!-- Slider -->
+<div class="row">
+        <article class="column column-50">
+            <div class="cat-left">
+              <h2 class="cat-title">Profil</h2>
+              <a href="#"><img src="assets/user.png"></a>
+              <p>LeFadadu93</p>
+               <div class="cat-button">
+                    <a href="http://localhost:5000/category.html?name=tips">
+                    <button>Edit</button>
+                    </a>
+                </div>
+            </div>
+        </article>
+    
 
-      </div>
-    </article>
-  </div>
+
+
+    
+    <!-- Block category 1 -->
+        <article class="column column-50">
+            <div class="cat-right">
+                
+                <h2 class="cat-title">Last Post</h2>
+                
+                <div class="article container">
+
+                    <div id="posts-tips">
+                    </div>
+  
+                </div>
+
+                <div class="cat-button">
+                    <a href="http://localhost:5000/category.html?name=tips">
+                    <button>More</button>
+                    </a>
+                </div>
+            </div>   
+        </article>
+    </div>
+</section>
+    <!-- Block category 2 -->
+    <section class="container">
+    <!-- Slider -->
+<div class="row">
+        <article class="column column-50">
+            <div class="cat-left">
+              <h2 class="cat-title">Save </h2><br><i class="fas fa-heart"></i></h2>
+              <div class="article container">
+
+                    <div id="posts-tips">
+                    </div>
+  
+                </div>
+
+                <div class="" ass="cat-button">
+                    <a href="http://localhost:5000/category.html?name=tips">
+                    <button>More</button>
+                    </a>
+                </div>
+
+            </div>
+        </article>
+    <div class="row">
+        <article class="column column  column-100">
+            <div class="cat-right">
+              <h2 class="cat-title">Last Comments</h2>
+              <div class="article container">
+                <div id="posts-javascript">
+                </div>
+              </div>
+
+              <div class="cat-button">
+                <a href="http://localhost:5000/category.html?name=javascript">
+                <button>More</button>
+                </a>
+              </div>
+
+            </div>
+        </article>
+    </div>
+
 </section>
 
-<footer>
-  <p>&copy;2018 Wild News</p>
-</footer>
 
-<script type="module" src="/js/postAlone.js"></script>
+<footer>
+    <p>&copy;2018 Wild News</p>
+</footer>
+<script type="module" src="/js/app.js"></script>
 
 </body>
 

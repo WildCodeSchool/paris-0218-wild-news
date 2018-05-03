@@ -4,47 +4,188 @@
 <head>
   <meta charset="utf-8">
   <title>Wild News</title>
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+ 
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".menu-icon").click(function(){
+          $(".menu-icon").toggleClass("active")
+        })
+
+       $(".menu-icon").click(function(){
+          $(".sidebar").toggleClass("active")
+      })
+      })
+    </script>
+    <script type="text/javascript">
+      
+    </script>
 </head>
 
 <body>
 
 <header>
   <!-- headbar -->
+<nav>
   <div class="headbar">
     <ul>
       <li id="logo">
         <a href="http://localhost:5000/">
-        <img src="assets/logo_orange.png" alt="logo">
+        <img src="assets/wildnewslogo.png" alt="logo">
         </a>
       </li>
-      <li>
-        <h1>Wild News</h1>
-      </li>
-      <li class="user">
-        <div>
-          <div class="user-img"></div>
-          <a href="">Log in - Sign in</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-    <!-- navbar -->
-  <nav class="navbar">
-    <ul>
+      
+   
+      <!-- user -->
+      <!-- navbar debut -->
+      <nav class="navbar">
+      <ul>
       <li>
         <a href="http://localhost:5000/">Home</a>
-      </li>
+         <li class="user">
+        <div>
+         
 
-      <!-- INSERT CATEGORIES -->
-      <div id="navbar">             
+          <!-- Button to open the modal -->
+          <div id="connect">
+            <button onclick="document.getElementById('signup').style.display='block'">Sign Up</button>
+          </div>
+                <!-- The Modal (contains the Sign Up form) -->
+                <div id="signup" class="modal">
+                <span onclick="document.getElementById('signup').style.display='none'"
+                  class="close" title="Close Modal">&times;</span>
+                      <form class="modal-content">
+                        <div class="container">
+                          <h1>Sign Up</h1>
+                              <p>Please fill in this form to create an account.</p>
+                                  <hr>
+                                  <label for="fname">First Name</label>
+                                  <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                                  <label for="lname">Last Name</label>
+                                  <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                                  <label for="email"><b>Email</b></label>
+                                  <input type="text" placeholder="Enter Email" name="email" required>
+
+                                  <label for="psw"><b>Password</b></label>
+                                  <input type="password" placeholder="Enter Password" name="psw" required>
+
+                                  <label for="psw-repeat"><b>Repeat Password</b></label>
+                                  <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+                             
+                          
+                          <div class="clearfix">
+                          <button type="submit" class="signup">Sign Up</button>
+                          </div>
+                        </div>
+                      </form>
+                </div>
+<!-- Button to open the modal login form -->
+      <div id="connect">
+      <button onclick="document.getElementById('login').style.display='block'">Login</button>
       </div>
 
-      <li class="add" id="btn-category">
-        Add
+<!-- The Modal login -->
+<div id="login" class="modal">
+<span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+<!-- Modal login Content -->
+                      <form class="modal-content animate">
+                            <div class="imgcontainer login">
+                            <img src="assets/user.png" alt="Avatar" class="avatar">
+                            </div>
+
+                              <div class="container login-form">
+                              <label for="uname"><b>Username</b></label>
+                              <input type="text" placeholder="Enter Username" name="uname" required>
+
+                              <label for="psw"><b>Password</b></label>
+                              <input type="password" placeholder="Enter Password" name="psw" required>
+
+                              <button type="submit">Login</button>
+                              <label>
+                              <input type="checkbox" checked="checked" name="remember"> Remember me
+                              </label>
+                              </div>
+                                <div id="connect">
+            <button class="logincolor" onclick="document.getElementById('signup').style.display='block'; document.getElementById('login').style.display='none'"> 
+
+            <p>Not yet a member ? </p> </button>
+
+            <div id="login" class="modallogin">
+
+          </div>
+                <!-- The Modal (contains the Sign Up form) -->
+
+                <div id="signup" class="modal">
+                <span onclick="document.getElementById('signup').style.display='none'"
+                  class="close" title="Close Modal">&times;</span>
+                      <form class="modal-content">
+                        <div class="container">
+                          <h1>Sign Up</h1>
+                              <p>Please fill in this form to create an account.</p>
+                                  <hr>
+                                  <label for="fname">First Name</label>
+                                  <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                                  <label for="lname">Last Name</label>
+                                  <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                                  <label for="email"><b>Email</b></label>
+                                  <input type="text" placeholder="Enter Email" name="email" required>
+
+                                  <label for="psw"><b>Password</b></label>
+                                  <input type="password" placeholder="Enter Password" name="psw" required>
+
+                                  <label for="psw-repeat"><b>Repeat Password</b></label>
+                                  <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+                              <p>Already a member...<a href="#login" style="color:dodgerblue">Login</a>.</p>
+                          
+                          <div class="clearfix">
+                          <button type="submit" class="signup">Sign Up</button>
+                          </div>
+                        </div>
+                      </form>
+                </div>
+                              
+                      </form>
+                  </div> 
+                </div>
+           </li>
+      </li>
+<div id="navbar">             
+      </div>
+
+      </li>
+    </ul>
+  </nav>
+</ul>
+</div>
+
+
+<div class="menu-icon">
+          <i class="fas fa-user-circle fa-3x"></i>
+    </div>
+    <div class="sidebar">
+          <a href="#"><img src="assets/user.png"></a>
+          <ul class="menu"> 
+               
+              <li><a href="profil.html"><i class="far fa-user"></i></br>My Profil</a></li> 
+              <li><a href="#"><i class="fas fa-chart-line"></i></br>Most Populars</a></li> 
+              <li><a href="#"><i class="far fa-newspaper"></i></br>Recent Posts</a></li> 
+              <li id="btn-category">
+              <a href="#"><i class="fas fa-plus-square" aria-hidden="true"></i></br>Add Categories  </a></li>
+            
+             
+          </ul>
+
         <div id="my-modal-cat" class="modal">
         <!-- Modal content -->
           <div class="modal-content">
@@ -75,23 +216,127 @@
             </div>
           </div>
         </div>
-      </li>
+
+          </ul> 
+          <ul class="social-icon">
+            <li><a href="#"><img src="assets/logo_orange.png"></a></li>
+            <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="far fa-address-book" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fab fa-google" aria-hidden="true"></i></a></li>
+
+        </ul>
+    </div>
+</nav>
+      <!-- fin du headbar -->
+
     </ul>
-  </nav>
+  </div>
+    <!-- navbar -->
+  
+    
+
+      <!-- INSERT CATEGORIES -->
+     
 </header>
 
-<section class="container">
-    <!-- Slider -->
-    <div class="row">
-        <div class="slider column column-100">
-            <img src="/assets/detox.png" alt="slide 1">
-        </div>
-    </div>
+<div id="outerbox">
+<div id="sliderbox">
+ <section id="slideshow">
+<label class="textOverImage"
+style="background-image: url(https://images.itnewsinfo.com/lmi/articles/grande/000000061442.jpg);">
+<h3>"Anna Stépanoff, fondatrice de la Wild Code School  <div>Anna Stépanoff, fondatrice de la Wild Code School: « On peut se former au code à tout âge et même en étant enceinte"> </div></h3>
+ <div class="cat-button">
+                <a href="http://localhost:5000/category.html?name=tips">
+                <button>More</button>
+                </a>
+              </div>
+</label>
+<label class="textOverImage"
+style="background-image: url(https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2018/butterflywin.jpg)">
+
+  <h3>Nanotechnologies<div>Butterfly wings inspire light-manipulating surface for medical implants</div></h3>
+  
+   <div class="cat-button">
+                <a href="http://localhost:5000/category.html?name=Science">
+                <button>More</button>
+                </a>
+              </div>
+</label>
+<label class="textOverImage"
+style="background-image: url(https://ep01.epimg.net/elpais/imagenes/2018/05/01/media/1525206890_571353_1525207229_miniatura_normal.png);">
+  <h3>El Madrid alcanza su tercera final consecutiva<div>A pesar del empate en el Bernabéu, los blancos jugarán en Kiev haciendo valer el 1-2 de la ida</div></h3>
+   <div class="cat-button">
+                <a href="http://localhost:5000/category.html?name=sport">
+                <button>More</button>
+                </a>
+              </div>
+</label>
+<label class="textOverImage"
+style="background-image: url(https://jaxenter.com/wp-content/uploads/2018/03/shutterstock_64341418.jpg);">
+  <h3>React News on Native<div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis fugiat non reiciendis fuga quas minima.</div></h3>
+   <div class="cat-button">
+                <a href="http://localhost:5000/category.html?name=tips">
+                <button>More</button>
+                </a>
+              </div>
+</label>
+<label class="textOverImage"
+style="background-image: url(https://cdn-images-1.medium.com/max/2000/1*iRYQd9SyTLDMtGsIUENlhw.jpeg);">
+  <h3>7 Surprising Things I Learned Writing a Fibonacci Generator in JavaScript<div>Article sur un générateur de Fibonacci avec JS</div></h3>
+   <div class="cat-button">
+                <a href="http://localhost:5000/category.html?name=javascript">
+                <button>More</button>
+                </a>
+              </div>
+
+
+<span id="timeline"></span>
+
+
+</section>
+</div>
+</div>
+    <!-- Slider 
+<section id="slideshow">
+<label class="textOverImage"
+style="background-image: url(https://images.itnewsinfo.com/lmi/articles/grande/000000061442.jpg);">
+<h3>"Anna Stépanoff, fondatrice de la Wild Code School  <div>Anna Stépanoff, fondatrice de la Wild Code School: « On peut se former au code à tout âge et même en étant enceinte"> </div></h3>
+ <div class="cat-button">
+                <a href="http://localhost:5000/category.html?name=tips">
+                <button>More</button>
+                </a>
+              </div>
+</label>
+<label class="textOverImage"
+style="background-image: url(https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2018/butterflywin.jpg)">
+
+  <h3>Nanotechnologies<div>Butterfly wings inspire light-manipulating surface for medical implants</div></h3>
+  
+   <div class="cat-button">
+                <a href="http://localhost:5000/category.html?name=Science">
+                <button>More</button>
+                </a>
+              </div>
+</label>
+<label class="textOverImage"
+style="background-image: url(https://ep01.epimg.net/elpais/imagenes/2018/05/01/media/1525206890_571353_1525207229_miniatura_normal.png);">
+  <h3>El Madrid alcanza su tercera final consecutiva<div>A pesar del empate en el Bernabéu, los blancos jugarán en Kiev haciendo valer el 1-2 de la ida</div></h3>
+   <div class="cat-button">
+                <a href="http://localhost:5000/category.html?name=sport">
+                <button>More</button>
+                </a>
+              </div>
+</label>
+
+
+<span id="timeline"></span>
+
+
 </section>
 
-
 <section class="container">
-    
+   --> 
     <!-- Block category 1 -->
     <div class="row">
         <article class="column column-100">
@@ -134,7 +379,17 @@
     </div>
 
 </section>
+<script>
+// Get the modal
+var modal = document.getElementById('signup');
 
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 
 <footer>
     <p>&copy;2018 Wild News</p>
