@@ -9,8 +9,8 @@ window.fetch(`${config.serverHost}/categories`)
   .then(response => response.json())
   .then(categories => { // get array of categories title (sort on server side in app.js)
     const categoriesList = document.getElementById('navbar')
-    const categoryList = categories.map(createNavBar).join('') // apply function createNavbar of component on category
-    categoriesList.innerHTML = categoryList // insert in HTML
+    // apply function createNavbar of component on category
+    categoriesList.innerHTML = categories.map(createNavBar).join('') // insert in HTML
   })
 
 // =========BUTTON TO ADD A CATEGORY============== //

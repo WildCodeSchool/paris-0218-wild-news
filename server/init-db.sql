@@ -46,14 +46,14 @@ CREATE TABLE post (
 
 CREATE TABLE comment (
 	id INT NOT NULL AUTO_INCREMENT,
-	author INT NOT NULL,
+	author VARCHAR(100) NOT NULL,
 	createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	deletedAt TIMESTAMP NULL,
 	content TEXT,
 	parent INT,
-	FOREIGN KEY (author)		
-		REFERENCES user(id)
-		ON DELETE CASCADE,
+	post INT NOT NULL,
+	FOREIGN KEY (post)
+		REFERENCES post(id),
 	FOREIGN KEY (parent)
 		REFERENCES comment(id),
 	PRIMARY KEY (id)

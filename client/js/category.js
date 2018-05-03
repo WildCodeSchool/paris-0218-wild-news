@@ -3,7 +3,7 @@
 import '/js/common.js'
 import { createNewPost } from '/components/block-category.js'
 import { createNewTitle } from '/components/block-title-category.js'
-
+import { config } from '/parameters.js'
 const params = new URLSearchParams(window.location.search) // get all params of the URL: name, id and a lot of other thing (do console.log to see)
 const categoryName = params.get('name') // get only the param name of URL (in our case the category name)
 

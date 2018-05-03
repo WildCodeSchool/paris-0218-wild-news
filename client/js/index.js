@@ -1,6 +1,7 @@
 
 // =========IMPORT COMPONENTS============== //
 import '/js/common.js'
+import { config } from '/parameters.js'
 import { createNewPost } from '/components/block-article-index.js'
 
 // =========FETCH OF ALL POSTS============== //

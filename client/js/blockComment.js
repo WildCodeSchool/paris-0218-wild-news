@@ -1,12 +1,12 @@
 /* global URLSearchParams */
 // =========IMPORT COMPONENTS==============//
 import { createNewComment } from '/components/block-comment.js'
-//import { createNavBar } from '/components/nav-bar.js'
-const params = new URLSearchParams(window.location.search)
-//const id = params.get('id')
+import { config } from '/parameters.js'
 
+const params = new URLSearchParams(window.location.search)
+const id = params.get('id')
 // =========FETCH COMMENT============//
-window.fetch(`http://localhost:3000/comment`)
+window.fetch(`${config.serverHost}/comment/${id}`)
   .then(response => response.json())
   .then(comment => {
     const postComment = document.getElementById('comment-content')
@@ -16,17 +16,17 @@ window.fetch(`http://localhost:3000/comment`)
   })
 
   // =========ADD COMMENT============//
-  document.getElementById('add-comment').addEventListener('submit', event => { // get button and event
+document.getElementById('add-comment').addEventListener('submit', event => { // get button and event
   event.preventDefault() // prevent reload of the page after submit
   // get values of the form
   const author = document.getElementById('author-comment').value
   const content = document.getElementById('content-comment').value
   // Fetch which post data of the new category
-  window.fetch('http://localhost:3000/comment', {
+  window.fetch(`${config.serverHost}/comment`, {
     method: 'post',
     body: JSON.stringify({
       author,
-      content,
+      content
     })
   }).then(res => console.log(res.status))
 })

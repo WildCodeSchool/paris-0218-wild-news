@@ -41,19 +41,9 @@ exports.post.create = params => exec(`
 exports.post.readAll = () => exec('SELECT * FROM post')
 exports.post.readBy = params => exec(`SELECT * FROM post WHERE ${where(params)}`, params)
 
-//create comment
-const createComment = params => exec(`
+exports.comment = {}
+exports.comment.readBy = params => exec(`SELECT * FROM comment WHERE ${where(params)}`, params)
+exports.comment.create = params => exec(`
   INSERT INTO comment (author, content)
   VALUES (:author, :content)`, params)
-
-// select comments from database
-const readComment = () => exec(`SELECT * FROM comment ORDER BY createdAt DESC`)
-
-readComment()
-  .then(comment => console.log('comment:', comment))
-  .catch(console.error)
-
-module.exports = {
-  createComment,
-  readComment
-}
+exports.comment.readAll = () => { return exec(`SELECT * FROM comment ORDER BY createdAt DESC`) }
