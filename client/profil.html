@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Wild News</title>
+ 
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".menu-icon").click(function(){
+          $(".menu-icon").toggleClass("active")
+        })
+
+       $(".menu-icon").click(function(){
+          $(".sidebar").toggleClass("active")
+      })
+      })
+    </script>
+    <script type="text/javascript">
+      
+    </script>
+</head>
+
+<body>
+
+<header>
+  <!-- headbar -->
+<nav>
+  <div class="headbar">
+    <ul>
+      <li id="logo">
+        <a href="http://localhost:5000/">
+        <img src="assets/wildnewslogo.png" alt="logo">
+        </a>
+      </li>
+      
+   
+      <!-- user -->
+      <!-- navbar debut -->
+      <nav class="navbar">
+      <ul>
+      <li>
+        <a href="http://localhost:5000/">Home</a>
+      </li>
+<div id="navbar">             
+      </div>
+
+      </li>
+    </ul>
+  </nav>
+</ul>
+</div>
+
+
+<div class="menu-icon">
+          <i class="fas fa-user-circle fa-3x"></i>
+        
+    </div>
+    <div class="sidebar">
+          <a href="#"><img src="assets/user.png"></a>
+          <ul class="menu"> 
+               
+              <li><a href="#"><i class="far fa-user"></i></br>My Profil</a></li> 
+              <li><a href="#"><i class="fas fa-chart-line"></i></br>Most Populars</a></li> 
+              <li><a href="#"><i class="far fa-newspaper"></i></br>Recent Posts</a></li> 
+              <li id="btn-category">
+              <a href="#"><i class="fas fa-plus-square" aria-hidden="true"></i></br>Add Categories  </a></li>
+            
+             
+          </ul>
+
+        <div id="my-modal-cat" class="modal">
+        <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close-cat">&times;</span>
+              <h2>Create a new category</h2>
+            </div>
+            <div class="modal-body">
+              <form id="add-category">
+                <label>
+                  Title:
+                  <input type="text" id="title-category" name="title category">
+                </label>
+                <label>
+                  Description:
+                  <textarea type="text"  id="description-category" name="description-category"></textarea>
+                </label>
+                <label>
+                  Image of category:
+                  <input type="text" id="img-category" name="image-category">
+                </label>
+                
+                <button type="submit" value="Create my category" onclick="window.parent.location.reload();window.close()">
+                  Create my category...
+                </button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+          </ul> 
+          <ul class="social-icon">
+            <li><a href="#"><img src="assets/logo_orange.png"></a></li>
+            <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="far fa-address-book" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fab fa-google" aria-hidden="true"></i></a></li>
+
+        </ul>
+    </div>
+</nav>
+      <!-- fin du headbar -->
+
+    </ul>
+  </div>
+    <!-- navbar -->
+  
+    
+
+      <!-- INSERT CATEGORIES -->
+      
+</header>
+
+
+<section class="container">
+    <!-- Slider -->
+<div class="row">
+        <article class="column column-50">
+            <div class="cat-left">
+              <h2 class="cat-title">Profil</h2>
+              <a href="#"><img src="assets/user.png"></a>
+              <p>LeFadadu93</p>
+               <div class="cat-button">
+                    <a href="http://localhost:5000/category.html?name=tips">
+                    <button>Edit</button>
+                    </a>
+                </div>
+            </div>
+        </article>
+    
+
+
+
+    
+    <!-- Block category 1 -->
+        <article class="column column-50">
+            <div class="cat-right">
+                
+                <h2 class="cat-title">Last Post</h2>
+                
+                <div class="article container">
+
+                    <div id="posts-tips">
+                    </div>
+  
+                </div>
+
+                <div class="cat-button">
+                    <a href="http://localhost:5000/category.html?name=tips">
+                    <button>More</button>
+                    </a>
+                </div>
+            </div>   
+        </article>
+    </div>
+</section>
+    <!-- Block category 2 -->
+    <section class="container">
+    <!-- Slider -->
+<div class="row">
+        <article class="column column-50">
+            <div class="cat-left">
+              <h2 class="cat-title">Save </h2><br><i class="fas fa-heart"></i></h2>
+              <div class="article container">
+
+                    <div id="posts-tips">
+                    </div>
+  
+                </div>
+
+                <div class="" ass="cat-button">
+                    <a href="http://localhost:5000/category.html?name=tips">
+                    <button>More</button>
+                    </a>
+                </div>
+
+            </div>
+        </article>
+    <div class="row">
+        <article class="column column  column-100">
+            <div class="cat-right">
+              <h2 class="cat-title">Last Comments</h2>
+              <div class="article container">
+                <div id="posts-javascript">
+                </div>
+              </div>
+
+              <div class="cat-button">
+                <a href="http://localhost:5000/category.html?name=javascript">
+                <button>More</button>
+                </a>
+              </div>
+
+            </div>
+        </article>
+    </div>
+
+</section>
+
+
+<footer>
+    <p>&copy;2018 Wild News</p>
+</footer>
+<script type="module" src="/js/app.js"></script>
+
+</body>
+
+</html>
+
+

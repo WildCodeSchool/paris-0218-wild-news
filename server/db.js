@@ -2,13 +2,11 @@ const mysql = require('mysql2/promise')
 
 // connection database with a promise
 const pendingConnection = mysql.createConnection({
-
   user: 'server',
   host: 'localhost',
   database: 'wildnews',
   password: 'mysql',
   namedPlaceholders: true
-
 })
 
 const keyToKeyValue = k => `${k}=:${k}`
@@ -21,18 +19,31 @@ const exec = async (query, params) => {
   return result[0]
 }
 
-const createUser = params => exec(`
+exports.category = {}
+exports.category.create = params => exec(`
+  INSERT INTO category (title, description, imageURL)
+  VALUES (:title, :description, :image)`, params)
+exports.category.readAll = () => exec(`SELECT * FROM category`)
+exports.category.readBy = params => exec(`SELECT * FROM category WHERE ${where(params)}`, params)
+exports.category.update = params => exec(`UPDATE category SET title=?, description=?, imageURL=? WHERE id=?`, [params.title, params.description, params.imageURL, params.id])
+
+exports.user = {}
+exports.user.create = params => exec(`
   INSERT INTO user (username, firstName, lastName, email, password)
   VALUES (:username, :firstName, :lastName, :email, :password)`, params)
-const readUser = () => exec(`SELECT * FROM user`)
-const readUserById = id => exec(`SELECT * FROM user WHERE id=:id`, { id })
-const readUserby = params => exec(`SELECT * FROM user WHERE ${where(params)}`, params)
+exports.user.readAll = () => exec(`SELECT * FROM user`)
+exports.user.readBy = params => exec(`SELECT * FROM user WHERE ${where(params)}`, params)
 
-module.exports = {
-  user: {
-    create: createUser,
-    read: readUser,
-    readBy: readUserby,
-    readById: readUserById
-  }
-}
+exports.post = {}
+exports.post.create = params => exec(`
+  INSERT INTO post (title, description, imageURL, sourceURL, category, author, createdAt)
+  VALUES (:title, :description, :image, :link, :category, :author, :createdAt)`, params)
+exports.post.readAll = () => exec('SELECT * FROM post')
+exports.post.readBy = params => exec(`SELECT * FROM post WHERE ${where(params)}`, params)
+
+exports.comment = {}
+exports.comment.create = params => exec(`  
+  INSERT INTO comment (author, content, createdAt, post)
+  VALUES (:author, :content, :createdAt, :post)`, params)
+exports.comment.readAll = () => exec(`SELECT * FROM comment ORDER BY createdAt DESC`)
+exports.comment.readBy = params => exec(`SELECT * FROM comment WHERE ${where(params)}`, params)
