@@ -2,19 +2,20 @@
 // =========IMPORT COMPONENTS==============//
 import { createNewComment } from '/components/block-comment.js'
 import { config } from '/parameters.js'
-console.log(windows.location)
+console.log(window.location)
 
 const params = new URLSearchParams(window.location.search)
-const id = params.get('id')
+const idcomment = params.get('id')
+console.log(idcomment)
 // =========FETCH COMMENT============//
-window.fetch(`${config.serverHost}/comment/${id}`)
-  .then(response => response.json())
-  .then(comment => {
-    const postComment = document.getElementById('comment-content')
-    const readComment = comment.map(createNewComment).join('')
-    postComment.innerHTML = readComment
-    console.log(readComment)
-  })
+// window.fetch(`${config.serverHost}/comment/${id}`)
+//   .then(response => response.json())
+//   .then(comment => {
+//     const postComment = document.getElementById('comment-content')
+//     const readComment = comment.map(createNewComment).join('')
+//     postComment.innerHTML = readComment
+//     console.log(readComment)
+//   })
 
   // =========ADD COMMENT============//
 document.getElementById('add-comment').addEventListener('submit', event => { // get button and event
@@ -22,16 +23,15 @@ document.getElementById('add-comment').addEventListener('submit', event => { // 
   // get values of the form
   const author = document.getElementById('author-comment').value
   const content = document.getElementById('content-comment').value
-  const postID = windows.location.URLSearchParams
 
 
   // Fetch which post data of the new category
   window.fetch(`${config.serverHost}/comment`, {
     method: 'post',
     body: JSON.stringify({
-      author,
-      content,
-      post: id,
+      author: author,
+      content: content,
+      post: idcomment
     })
   }).then(res => console.log(res.status))
 })

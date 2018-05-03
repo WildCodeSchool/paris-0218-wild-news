@@ -1,6 +1,8 @@
 
 // =========IMPORT COMPONENTS============== //
 import '/js/common.js'
+import '/js/blockComment.js'
+
 import { config } from '/parameters.js'
 import { createNewPost } from '/components/block-article-index.js'
 

@@ -59,18 +59,20 @@ app.get('/category/:title', (request, response, next) => {
 // =============GET POST BY ID==============//
 app.get('/post/:id', (request, response, next) => {
   db.post.readBy(request.params)
-    .then(posts => {
+    .then(posts => response.json(posts))
+      //{
       // let post = posts[0]
-      db.comment.readBy({posts: posts[0].id})
-      console.log(posts)
-        .then(comments => {
-          posts.comments = comments
-          response.json(posts)
-        })
+      //db.comment.readBy({posts: posts[0].id})
+      //console.log(posts)
+        // .then(comments => {
+        //   posts.comments = comments
+        //   response.json(posts)
+
+        //})
         .catch(next)
     })
-    .catch(next)
-})
+//     .catch(next)
+// })
 //   try {
 //     const post = await db.post.readBy(request.params)
 //     response.json(post[0])
@@ -112,10 +114,7 @@ app.post('/category', (request, response, next) => {
 
 // ==============POST NEW COMMENT==============//
 app.post('/comment', (request, response, next) => {
-  db.comment.create({
-    author: request.body.author,
-    content: request.body.content
-  })
+  db.comment.create(request.body)
     .then(() => response.json('ok'))
     .catch(next)
 })

@@ -45,9 +45,8 @@ exports.post.readBy = params => exec(`SELECT * FROM post WHERE ${where(params)}`
 exports.comment = {}
 exports.comment.readBy = params => exec(`SELECT * FROM comment WHERE ${where(params)}`, params)
 exports.comment.create = params => exec(`
-  INSERT INTO comment (author, content)
-  VALUES (:author, :content)`, params)
+  INSERT INTO comment (author, content,post)
+  VALUES (:author, :content, :post)`, params)
 exports.comment.readAll = () => { return exec(`SELECT * FROM comment ORDER BY createdAt DESC`) }
 
-exports.category.readAll()
 
