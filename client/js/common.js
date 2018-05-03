@@ -63,3 +63,6 @@ window.onclick = function (event) {
     modalCat.style.display = 'none'
   }
 }
+
+
+

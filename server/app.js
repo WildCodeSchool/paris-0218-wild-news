@@ -5,6 +5,74 @@ const pe = new PrettyError()
 const app = express()
 const db = require('./db.js')
 
+// ==============SESSION==============//
+
+const bodyParser = require('body-parser')
+const session = require('express-session')
+const FileStore = require('session-file-store')(session)
+
+const secret = 'only for your eyes'
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', req.headers.origin) // Clever, not a good practise though..
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  res.header('Access-Control-Allow-Credentials', 'true') // important
+  next()
+})
+
+// Setup session handler
+app.use(session({
+  secret,
+  saveUninitialized: false,
+  resave: true,
+  store: new FileStore({ secret }),
+}))
+
+// Logger middleware
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`, { user: req.session.user, cookie: req.headers.cookie })
+  next()
+})
+
+app.get('/', (req, res) => {
+  const user = req.session.user || {}
+
+  res.json(user)
+})
+
+app.post('/sign-in', (req, res, next) => {
+  // does user exists ?
+  const user = users.find(u => req.body.login === u.login)
+
+  // Error handling
+  if (!user) {
+    return res.json({ error: 'User not found' })
+  }
+
+  if (user.password !== req.body.password) {
+    return res.json({ error: 'Wrong password' })
+  }
+
+  // else, set the user into the session
+  req.session.user = user
+
+  res.json(user)
+})
+
+app.get('/sign-out', (req, res, next) => {
+  req.session.user = {}
+
+  res.json('ok')
+})
+
+app.use((err, req, res, next) => {
+  if (err) {
+    res.json({ message: err.message })
+    console.error(err)
+  }
+
+  next(err)
+})
+
 // ==============HEADER==============//
 app.use((request, response, next) => {
   response.header('Access-Control-Allow-Origin', '*')
