@@ -60,11 +60,12 @@ app.get('/category/:title', (request, response, next) => {
 app.get('/post/:id', (request, response, next) => {
   db.post.readBy(request.params)
     .then(posts => {
-      let post = posts[0]
-      db.comment.readBy({post: post.id})
+      // let post = posts[0]
+      db.comment.readBy({posts: posts[0].id})
+      console.log(posts)
         .then(comments => {
-          post.comments = comments
-          response.json(post)
+          posts.comments = comments
+          response.json(posts)
         })
         .catch(next)
     })
