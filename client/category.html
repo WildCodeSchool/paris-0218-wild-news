@@ -4,17 +4,30 @@
 <head>
   <meta charset="utf-8">
   <title>Wild News</title>
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
-</head>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".menu-icon").click(function(){
+          $(".menu-icon").toggleClass("active")
+        })
 
+       $(".menu-icon").click(function(){
+          $(".sidebar").toggleClass("active")
+      })
+      })
+    </script>
+    <script type="text/javascript">
+
+    </script>
+</head>
 <body>
 <header>
 
 </header>
-
 
 <section class="container">
   <!-- Block category -->
