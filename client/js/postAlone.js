@@ -2,6 +2,8 @@
 
 // =========IMPORT COMPONENTS==============//
 import '/js/common.js'
+import '/js/blockComment.js'
+
 import { config } from '/parameters.js'
 import { createNewPost } from '/components/block-article-alone.js'
 
@@ -15,3 +17,5 @@ window.fetch(`${config.serverHost}/post/${id}`) // get post id
     const postBlock = document.getElementById('post-alone')
     postBlock.innerHTML = createNewPost(post)
   })
+
+

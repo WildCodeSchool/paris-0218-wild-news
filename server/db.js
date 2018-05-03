@@ -36,10 +36,11 @@ exports.user.readBy = params => exec(`SELECT * FROM user WHERE ${where(params)}`
 
 exports.post = {}
 exports.post.create = params => exec(`
-  INSERT INTO post (title, description, imageURL, sourceURL, category, author, createdAt)
-  VALUES (:title, :description, :image, :link, :category, :author, :createdAt)`, params)
+  INSERT INTO post (title, description, imageURL, source, category, author, createdAt)
+  VALUES (:title, :description, :imageURL, :source, :category, :author, :createdAt)`, params)
 exports.post.readAll = () => exec('SELECT * FROM post')
 exports.post.readBy = params => exec(`SELECT * FROM post WHERE ${where(params)}`, params)
+
 
 exports.comment = {}
 exports.comment.readBy = params => exec(`SELECT * FROM comment WHERE ${where(params)}`, params)
@@ -47,3 +48,6 @@ exports.comment.create = params => exec(`
   INSERT INTO comment (author, content)
   VALUES (:author, :content)`, params)
 exports.comment.readAll = () => { return exec(`SELECT * FROM comment ORDER BY createdAt DESC`) }
+
+exports.category.readAll()
+

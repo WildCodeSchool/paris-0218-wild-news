@@ -2,6 +2,7 @@
 // =========IMPORT COMPONENTS==============//
 import { createNewComment } from '/components/block-comment.js'
 import { config } from '/parameters.js'
+console.log(windows.location)
 
 const params = new URLSearchParams(window.location.search)
 const id = params.get('id')
@@ -21,12 +22,16 @@ document.getElementById('add-comment').addEventListener('submit', event => { // 
   // get values of the form
   const author = document.getElementById('author-comment').value
   const content = document.getElementById('content-comment').value
+  const postID = windows.location.URLSearchParams
+
+
   // Fetch which post data of the new category
   window.fetch(`${config.serverHost}/comment`, {
     method: 'post',
     body: JSON.stringify({
       author,
-      content
+      content,
+      post: id,
     })
   }).then(res => console.log(res.status))
 })

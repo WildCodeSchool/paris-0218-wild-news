@@ -9,7 +9,7 @@ CREATE TABLE category (
 	id INT NOT NULL AUTO_INCREMENT,
 	title VARCHAR(50) NOT NULL,
 	description TEXT NOT NULL,
-	imageURL VARCHAR(2083) NOT NULL,
+	imageURL VARCHAR(250) NOT NULL,
 	createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (id),
 	UNIQUE KEY (title)
@@ -22,7 +22,7 @@ CREATE TABLE user (
 	lastName VARCHAR(50) NOT NULL,
 	email VARCHAR(50) NOT NULL,
 	password VARCHAR(50) NOT NULL,
-	imageURL VARCHAR(2083),
+	imageURL VARCHAR(250),
 	createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	deletedAt TIMESTAMP NULL,
 	PRIMARY KEY (id),
@@ -35,10 +35,10 @@ CREATE TABLE post (
 	createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	deletedAt TIMESTAMP NULL,
 	description TEXT,
-	imageURL VARCHAR(2083),
-	sourceURL TEXT,
+	imageURL VARCHAR(250),
+	source TEXT,
 	category INT NOT NULL,
-	author VARCHAR(100) NOT NULL,
+	author VARCHAR(250),
 	PRIMARY KEY (id),
 	FOREIGN KEY (category)		
 		REFERENCES category(id)
@@ -50,16 +50,13 @@ CREATE TABLE comment (
 	createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	deletedAt TIMESTAMP NULL,
 	content TEXT,
-	parent INT,
 	post INT NOT NULL,
 	FOREIGN KEY (post)
 		REFERENCES post(id),
-	FOREIGN KEY (parent)
-		REFERENCES comment(id),
 	PRIMARY KEY (id)
 ) ENGINE=INNODB;
 
-CREATE TABLE favposts (
+/*CREATE TABLE favposts (
 	userId INT NOT NULL,
 	postId INT NOT NULL,
 	FOREIGN KEY (userId)		
@@ -80,9 +77,3 @@ CREATE TABLE favcat (
 		REFERENCES category(id)
 		ON DELETE CASCADE
 ) ENGINE=INNODB;
-
-
-
-
-
--- SERVER 36:25

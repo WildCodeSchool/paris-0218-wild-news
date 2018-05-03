@@ -97,7 +97,7 @@ app.get('/comment', (request, response, next) => {
 app.post('/post', (request, response, next) => {
   let content = request.body
   content.createdAt = (new Date()).toISOString().substring(0, 10)
-  console.log(content)
+  console.log('route' + content)
   db.post.create(content)
     .then(() => response.json('OK'))
     .catch(next)

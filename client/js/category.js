@@ -44,8 +44,8 @@ document.getElementById('add-link').addEventListener('submit', event => {
   event.preventDefault()
   const title = document.getElementById('title-article').value
   const description = document.getElementById('description-article').value
-  const image = document.getElementById('img-article').value
-  const link = document.getElementById('link-article').value
+  const imageURL = document.getElementById('img-article').value
+  const source = document.getElementById('link-article').value
   // const category = document.getElementById('category-article').values
   const author = document.getElementById('author-article').value
   const categoryId = document.getElementsByClassName('cat-title')[0].getAttribute('data-id')
@@ -56,8 +56,8 @@ document.getElementById('add-link').addEventListener('submit', event => {
     body: JSON.stringify({
       title,
       description,
-      image,
-      link,
+      imageURL,
+      source,
       category: `${categoryId}`,
       author
     })
