@@ -4,88 +4,45 @@
 <head>
   <meta charset="utf-8">
   <title>Wild News</title>
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".menu-icon").click(function(){
+          $(".menu-icon").toggleClass("active")
+        })
+
+       $(".menu-icon").click(function(){
+          $(".sidebar").toggleClass("active")
+      })
+      })
+    </script>
+    <script type="text/javascript">
+
+    </script>
 </head>
 
 <body>
 
+
 <header>
-  <!-- headbar -->
-  <div class="headbar">
-    <ul>
-      <li id="logo">
-        <a href="http://localhost:5000/">
-        <img src="assets/logo_orange.png" alt="logo">
-        </a>
-      </li>
-      <li>
-        <h1>Wild News</h1>
-      </li>
-      <li class="user">
-        <div>
-          <div class="user-img"></div>
-          <a href="">Log in - Sign in</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-    <!-- navbar -->
-  <nav class="navbar">
-    <ul>
-      <li>
-        <a href="http://localhost:5000/">Home</a>
-      </li>
 
-      <!-- INSERT CATEGORIES -->
-      <div id="navbar">             
-      </div>
-
-      <li class="add" id="btn-category">
-        Add
-        <div id="my-modal-cat" class="modal">
-        <!-- Modal content -->
-          <div class="modal-content">
-            <div class="modal-header">
-              <span class="close-cat">&times;</span>
-              <h2>Create a new category</h2>
-            </div>
-            <div class="modal-body">
-              <form id="add-category">
-                <label>
-                  Title :
-                  <input type="text" id="title-category" name="title category">
-                </label>
-                <label>
-                  Description :
-                  <textarea type="text"  id="description-category" name="description-category"></textarea>
-                </label>
-                <label>
-                  Image of category :
-                  <input type="text" id="img-category" name="image-category">
-                </label>
-                
-                <button type="submit" value="Create my category" onclick="window.parent.location.reload();window.close()">
-                  Create my category...
-                </button>
-              </form>
-
-            </div>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </nav>
 </header>
+
+
+
+
+
 
 
 <section class="container">
   <div class="row">
     <article class="column column-100">
       <div class="cat-left">
-        
+
         <!-- INSERT BLOCKS OF CATEGORIES -->
         <div class="article container">
           <!-- INSERT POSTS -->
@@ -98,11 +55,80 @@
   </div>
 </section>
 
+<!-- COMMENTS SECTION -->
+<section class="container comment-section">
+
+  <!-- ADD COMMENT -->
+  <div class="row">
+    <article class="add-comment-block">
+      <div class="add-comment">
+        <div class="comment-user">
+          <div class="user-img"></div>
+          <h6>User Name</h6>
+        </div>
+        <form id="add-comment" class="comment-form">
+          <label>
+            author :
+            <input type="text" id="author-comment" name="author-comment">
+          </label>
+          <label>
+            Write your comment :
+            <textarea type="text"  id="content-comment" name="content-comment"></textarea>
+          </label>
+          <button type="submit" id="commentBtn">Post</button>
+        </form>
+      </div>
+    </article>
+  </div>
+
+  <!-- INSERT COMMENTS -->
+  <div id="comment-content">
+
+  </div>
+
+  <!-- UNDER COMMENTS -->
+  <!--<div class="row">-->
+    <!--<article class="comment-block-read">-->
+      <!--<div class="read-comment">-->
+        <!--<div class="row">-->
+          <!--<div class="comment-user">-->
+            <!--<div class="user-img"></div>-->
+            <!--<h6>User Name</h6>-->
+          <!--</div>-->
+          <!--<div class="comment-text">-->
+            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+          <!--<div class="comment-reaction">-->
+            <!--<div>-->
+              <!--<i class="fas fa-star fa-2x"></i>-->
+              <!--<p>84</p>-->
+            <!--</div>-->
+            <!--<div>-->
+              <!--<i class="fas fa-comments fa-2x"></i>-->
+              <!--<p>Comment</p>-->
+            <!--</div>-->
+            <!--<div>-->
+              <!--<i class="fas fa-paper-plane fa-2x"></i>-->
+              <!--<p>Message</p>-->
+            <!--</div>-->
+            <!--<div>-->
+              <!--<i class="fas fa-exclamation-circle fa-2x"></i>-->
+              <!--<p>Report</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</article>-->
+  <!--</div>-->
+</section>
+
 <footer>
   <p>&copy;2018 Wild News</p>
 </footer>
 
-<script type="module" src="/js/postAlone.js"></script>
+<script type="module" src="/js/post.js"></script>
 
 </body>
 

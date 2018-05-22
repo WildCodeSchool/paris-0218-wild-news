@@ -4,114 +4,152 @@
 <head>
   <meta charset="utf-8">
   <title>Wild News</title>
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".menu-icon").click(function(){
+          $(".menu-icon").toggleClass("active")
+        })
+
+       $(".menu-icon").click(function(){
+          $(".sidebar").toggleClass("active")
+      })
+      })
+    </script>
+    <script type="text/javascript">
+
+    </script>
 </head>
 
 <body>
 
 <header>
-  <!-- headbar -->
-  <div class="headbar">
-    <ul>
-      <li id="logo">
-        <a href="http://localhost:5000/">
-        <img src="assets/logo_orange.png" alt="logo">
-        </a>
-      </li>
-      <li>
-        <h1>Wild News</h1>
-      </li>
-      <li class="user">
-        <div>
-          <div class="user-img"></div>
-          <a href="">Log in - Sign in</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-    <!-- navbar -->
-  <nav class="navbar">
-    <ul>
-      <li>
-        <a href="http://localhost:5000/">Home</a>
-      </li>
 
-      <!-- INSERT CATEGORIES -->
-      <div id="navbar">             
-      </div>
-
-      <li class="add" id="btn-category">
-        Add
-        <div id="my-modal-cat" class="modal">
-        <!-- Modal content -->
-          <div class="modal-content">
-            <div class="modal-header">
-              <span class="close-cat">&times;</span>
-              <h2>Create a new category</h2>
-            </div>
-            <div class="modal-body">
-              <form id="add-category">
-                <label>
-                  Title:
-                  <input type="text" id="title-category" name="title category">
-                </label>
-                <label>
-                  Description:
-                  <textarea type="text"  id="description-category" name="description-category"></textarea>
-                </label>
-                <label>
-                  Image of category:
-                  <input type="text" id="img-category" name="image-category">
-                </label>
-                
-                <button type="submit" value="Create my category" onclick="window.parent.location.reload();window.close()">
-                  Create my category...
-                </button>
-              </form>
-
-            </div>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </nav>
 </header>
 
-<section class="container">
-    <!-- Slider -->
-    <div class="row">
-        <div class="slider column column-100">
-            <img src="/assets/detox.png" alt="slide 1">
-        </div>
-    </div>
+<div class="container">
+<div id="outerbox">
+<div id="sliderbox">
+ <section id="slideshow">
+<label class="textOverImage"
+style="background-image: url(https://images.itnewsinfo.com/lmi/articles/grande/000000061442.jpg);">
+<h3>"Anna Stépanoff, fondatrice de la Wild Code School  <div>Anna Stépanoff, fondatrice de la Wild Code School: « On peut se former au code à tout âge et même en étant enceinte"> </div></h3>
+ <div class="cat-button">
+                <a href="http://localhost:5000/category.html?name=tips">
+                <button>More</button>
+                </a>
+              </div>
+</label>
+<label class="textOverImage"
+style="background-image: url(https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2018/butterflywin.jpg)">
+
+  <h3>Nanotechnologies<div>Butterfly wings inspire light-manipulating surface for medical implants</div></h3>
+
+   <div class="cat-button">
+                <a href="http://localhost:5000/category.html?name=Science">
+                <button>More</button>
+                </a>
+              </div>
+</label>
+<label class="textOverImage"
+style="background-image: url(https://ep01.epimg.net/elpais/imagenes/2018/05/01/media/1525206890_571353_1525207229_miniatura_normal.png);">
+  <h3>El Madrid alcanza su tercera final consecutiva<div>A pesar del empate en el Bernabéu, los blancos jugarán en Kiev haciendo valer el 1-2 de la ida</div></h3>
+   <div class="cat-button">
+                <a href="http://localhost:5000/category.html?name=sport">
+                <button>More</button>
+                </a>
+              </div>
+</label>
+<label class="textOverImage"
+style="background-image: url(https://jaxenter.com/wp-content/uploads/2018/03/shutterstock_64341418.jpg);">
+  <h3>React News on Native<div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis fugiat non reiciendis fuga quas minima.</div></h3>
+   <div class="cat-button">
+                <a href="http://localhost:5000/category.html?name=tips">
+                <button>More</button>
+                </a>
+              </div>
+</label>
+<label class="textOverImage"
+style="background-image: url(https://cdn-images-1.medium.com/max/2000/1*iRYQd9SyTLDMtGsIUENlhw.jpeg);">
+  <h3>7 Surprising Things I Learned Writing a Fibonacci Generator in JavaScript<div>Article sur un générateur de Fibonacci avec JS</div></h3>
+   <div class="cat-button">
+                <a href="http://localhost:5000/category.html?name=javascript">
+                <button>More</button>
+                </a>
+              </div>
+
+
+<span id="timeline"></span>
+
+
+</section>
+</div>
+</div>
+    <!-- Slider
+<section id="slideshow">
+<label class="textOverImage"
+style="background-image: url(https://images.itnewsinfo.com/lmi/articles/grande/000000061442.jpg);">
+<h3>"Anna Stépanoff, fondatrice de la Wild Code School  <div>Anna Stépanoff, fondatrice de la Wild Code School: « On peut se former au code à tout âge et même en étant enceinte"> </div></h3>
+ <div class="cat-button">
+                <a href="http://localhost:5000/category.html?name=tips">
+                <button>More</button>
+                </a>
+              </div>
+</label>
+<label class="textOverImage"
+style="background-image: url(https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2018/butterflywin.jpg)">
+
+  <h3>Nanotechnologies<div>Butterfly wings inspire light-manipulating surface for medical implants</div></h3>
+
+   <div class="cat-button">
+                <a href="http://localhost:5000/category.html?name=Science">
+                <button>More</button>
+                </a>
+              </div>
+</label>
+<label class="textOverImage"
+style="background-image: url(https://ep01.epimg.net/elpais/imagenes/2018/05/01/media/1525206890_571353_1525207229_miniatura_normal.png);">
+  <h3>El Madrid alcanza su tercera final consecutiva<div>A pesar del empate en el Bernabéu, los blancos jugarán en Kiev haciendo valer el 1-2 de la ida</div></h3>
+   <div class="cat-button">
+                <a href="http://localhost:5000/category.html?name=sport">
+                <button>More</button>
+                </a>
+              </div>
+</label>
+
+
+<span id="timeline"></span>
+
+
 </section>
 
-
 <section class="container">
-    
+
     <!-- Block category 1 -->
     <div class="row">
         <article class="column column-100">
             <div class="cat-left">
-                
+
                 <h2 class="cat-title">Tips</h2>
-                
+
                 <div class="article container">
 
                     <div id="posts-tips">
                     </div>
-  
+
                 </div>
 
                 <div class="cat-button">
-                    <a href="http://localhost:5000/category.html?name=tips">
+                    <a href="category.html?name=tips">
                     <button>More</button>
                     </a>
                 </div>
-            </div>   
+            </div>
         </article>
 
     <!-- Block category 2 -->
@@ -124,7 +162,7 @@
               </div>
 
               <div class="cat-button">
-                <a href="http://localhost:5000/category.html?name=javascript">
+                <a href="category.html?name=javascript">
                 <button>More</button>
                 </a>
               </div>
@@ -135,11 +173,23 @@
 
 </section>
 
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('signup');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 
 <footer>
     <p>&copy;2018 Wild News</p>
 </footer>
-<script type="module" src="/js/app.js"></script>
+<script type="module" src="/js/index.js"></script>
 
 </body>
 

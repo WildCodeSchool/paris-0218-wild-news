@@ -1,0 +1,137 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Wild News</title>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+</head>
+
+<body>
+
+<header>
+  <!-- headbar -->
+  <div class="headbar">
+    <ul>
+      <li id="logo">
+        
+        <a href="http://localhost:5000/">
+        <img src="assets/logo_orange.png" alt="logo">
+        </a>
+      </li>
+      <li>
+        <h1>Wild News</h1>
+      </li>
+      <li class="user">
+        <div>
+          <div class="user-img"></div>
+          <a href="">Log in - Sign in</a>
+       
+  <div class="loginBox">
+      <img src="assets/user.png" class="user">
+      <h2>Log In Here</h2>
+      <form>
+        <p>Email</p>
+        <input type="text" name="" placeholder="Enter Email">
+        <p>Password</p>
+        <input type="password" name="" placeholder="••••••">
+        <input type="submit" name="" value="Sign In">
+        <a href="#">Forget Password</a>
+      </form>
+    </div>
+                
+                <button type="submit" value="LOGIN" onclick="window.parent.location.reload();window.close()">
+                  Create my account...
+                </button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </li>
+       </ul>
+  </nav>
+</header>
+
+
+
+<section class="container">
+  <!-- Block category -->
+  <div class="row">
+    <article class="column column-100">
+      <div class="cat-left">
+        <!-- INSERTION EN-TETE CATEGORIE -->
+        <div id="category-title">
+        </div>
+        <!-- INSERTION POSTS DE LA CATEGORIE -->
+        <div class="article container">
+          <div id="posts-tips">
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- POST BUTTON -->
+<section>
+  <button id="my-btn-link">Post A Link!</button>
+  <!-- MODAL POST BUTTON -->
+
+  <div id="my-modal-link" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close-link">&times;</span>
+        <h2>Post a link</h2>
+      </div>
+      <div class="modal-body">
+        <form id="add-link">
+          <label>
+            FirstName :
+            <input type="text" id="firstName" name="firstName">
+          </label>
+          <label>
+            LastName :
+            <textarea type="text"  id="lastName" name="lastName"></textarea>
+          </label>
+          <label>
+            Email :
+            <input type="text" id="email" name="email">
+          </label>
+          <label>
+            Username :
+            <input type="text" id="username" name="username">
+          </label>
+          <label class="label-category">
+            ImageProfil:
+            <input type="text" id="image-of-profil" name="image-of-profil">
+          </label>
+          <label>
+            Auteur :
+            <input type="text" id="author-article" name="author-article">
+          </label>
+          
+          <div class="send-button">
+            <button type="submit" value="Add my link" onclick="window.parent.location.reload();window.close()">POST MY LINK</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+<footer>
+  <p>&copy;2018 Wild News</p>
+</footer>
+
+<script type="module" src="/js/category.js"></script>
+
+</body>
+
+</html>
